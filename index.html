@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ССГ · Экотехнопарк Липецкого района</title>
+  <meta name="description" content="Экотехнопарк Липецкого района: как устроена сортировка отходов, что принимаем как вторсырьё и какие привычки помогают заводу. Собираем. Сортируем. Группируем.">
+  <meta name="theme-color" content="#25605C">
+  <meta property="og:title" content="ССГ · Экотехнопарк Липецкого района">
+  <meta property="og:description" content="Собираем. Сортируем. Группируем. Как устроена сортировка отходов в Липецке и что зависит от каждого из нас.">
+  <meta property="og:image" content="https://ekotechnopark.vercel.app/assets/photos/hall-bright.jpg">
+  <link rel="icon" href="assets/logo-symbol.png" type="image/png">
+  <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="motion-max.css">
+  <script>try{if(!sessionStorage.getItem('ssg-intro')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('intro')}catch(e){}</script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="intro-screen" id="intro" aria-hidden="true"><div class="intro-words"><span>Собираем.</span><span>Сортируем.</span><span>Группируем.</span></div></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 2h4v3l2 3v12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8l2-3V2z"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M9 12v2M15 12v2"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 24 24"><path d="M9 10h6v12H9z"/><path d="M12 10V7"/><path d="M12 7h4l2-2"/><path d="M16 7v3"/><path d="M18 3v1M20 5h1"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 7h12l-1.5 14h-9L5 7z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H16.5"/><path d="M4 4h14"/></symbol>
+  <symbol id="i-can" viewBox="0 0 24 24"><path d="M7 5v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5"/><ellipse cx="12" cy="5" rx="5" ry="1.8"/><path d="M7 9h10"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 24 24"><path d="M4 10h16v7a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-7z"/><path d="M2 10h20"/><path d="M9 10V7h6v3"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M10 2h4v4l2 3v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9l2-3V2z"/><path d="M8 13h8"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="8" width="14" height="8"/><path d="M17 10h2v4h-2"/><path d="M6 10.5v3M9 10.5v3"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></symbol>
+  <symbol id="i-accum" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11"/><path d="M7 6v2M17 6v2"/><path d="M7 13h3M14 13h3M15.5 11.5v3"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/><rect x="10" y="10" width="4" height="4"/><path d="M3 10h3M3 14h3M18 10h3M18 14h3M10 3v3M14 3v3M10 18v3M14 18v3"/></symbol>
+  <symbol id="i-brick" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 12h18M9 6v6M15 12v6"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 12l-4-4"/><path d="M12 16l4-4"/><path d="M12 8l3-3"/><path d="M8 8l-2-2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M3 15l2.5-8 2.5 8a2.5 2.5 0 0 1-5 0z"/><path d="M16 15l2.5-8 2.5 8a2.5 2.5 0 0 1-5 0z"/></symbol>
+</svg>
+
+  <!-- ======== ТОП-БАР ======== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>Липецкий муниципальный округ, Стебаевский сельсовет, территория экотехнопарка</span>
+        <span class="keep"><a href="tel:+74742261561">+7 (4742) 261-561</a></span>
+        <span>Завод — ежедневно 8:00–20:00</span>
+      </div>
+      <div class="social" aria-label="Соцсети"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+    </div>
+  </div>
+
+  <!-- ======== ШАПКА ======== -->
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="ССГ — на главную">
+        <img src="assets/logo-short.png" alt="ССГ">
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="sorting.html">Как обращаться с отходами</a>
+        <a href="#habits">Полезные привычки</a>
+        <a href="#about">Кто мы</a>
+        <a href="#how">Путь отходов</a>
+        <a href="#partners">Партнёрство</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="btn btn-primary btn-sm btn-nav" href="sorting.html#quiz">Пройти квиз</a>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="sorting.html">Как обращаться с отходами</a>
+    <a href="#habits">Полезные привычки</a>
+    <a href="#about">Кто мы</a>
+    <a href="#how">Путь отходов</a>
+    <a href="#partners">Партнёрство</a>
+    <a href="#contacts">Контакты</a>
+    <a href="sorting.html#quiz">Пройти квиз</a>
+    <div class="mm-foot">
+      <a href="tel:+74742261561">+7 (4742) 261-561</a>
+      <a href="mailto:info@ccg48.ru">info@ccg48.ru</a>
+      <span>Завод — ежедневно 8:00–20:00</span>
+      <div class="social" style="margin-top:8px"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+    </div>
+  </div>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero">
+    <img class="hero-photo" src="assets/photos/ecotechnopark-aerial.jpg" alt="Экотехнопарк Липецкого района с высоты" width="1280" height="655" fetchpriority="high">
+    <video class="hero-video" muted loop playsinline preload="none" data-src="assets/video/ecotechnopark-tour-2026-11-08.mp4" aria-hidden="true"></video>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-ring" aria-hidden="true"></div>
+    <div class="container">
+      <h1 class="hero-title"><span class="line"><span>Собираем.</span></span><span class="line"><span>Сортируем.</span></span><span class="line"><span>Группируем.</span></span></h1>
+      <p class="hero-sub">После контейнера начинается следующий этап. Мы собираем общий поток, сортируем его и группируем материалы, которые можем вернуть в переработку. А ещё показываем, как устроена эта система и как ежедневные привычки каждого помогают ей работать эффективнее.</p>
+      <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero-actions">
+        <a class="btn btn-white" href="sorting.html">Разобраться за 5 минут <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-on-dark" href="#search">Куда это выбросить?</a>
+      </div>
+    </div>
+    <div class="hero-meta">Стебаево · Липецкий район<br>ООО «СтройСельхозГарант»</div>
+  </section>
+
+  <!-- ======== БЕГУЩАЯ СТРОКА ======== -->
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span class="marquee-item">Собираем</span><span class="marquee-item">Сортируем</span><span class="marquee-item accent">Группируем</span><span class="marquee-item">550 тонн в день</span><span class="marquee-item">650 000 жителей</span><span class="marquee-item">Стебаево, Липецкий район</span></div><div class="marquee-group"><span class="marquee-item">Собираем</span><span class="marquee-item">Сортируем</span><span class="marquee-item accent">Группируем</span><span class="marquee-item">550 тонн в день</span><span class="marquee-item">650 000 жителей</span><span class="marquee-item">Стебаево, Липецкий район</span></div><div class="marquee-group"><span class="marquee-item">Собираем</span><span class="marquee-item">Сортируем</span><span class="marquee-item accent">Группируем</span><span class="marquee-item">550 тонн в день</span><span class="marquee-item">650 000 жителей</span><span class="marquee-item">Стебаево, Липецкий район</span></div><div class="marquee-group"><span class="marquee-item">Собираем</span><span class="marquee-item">Сортируем</span><span class="marquee-item accent">Группируем</span><span class="marquee-item">550 тонн в день</span><span class="marquee-item">650 000 жителей</span><span class="marquee-item">Стебаево, Липецкий район</span></div></div></div>
+
+  <!-- ======== СОМНИ БУТЫЛКУ: покадровая сцена от скролла ======== -->
+  <section class="crush" id="crush" data-cap-frames="31" data-cap-seq="assets/seq/cap/" data-cap-share="0.21" data-pour-frames="54" data-pour-seq="assets/seq/pour/" data-pour-share="0.57" data-frames="63" data-seq="assets/seq/bottle/">
+    <div class="container crush-inner">
+      <div class="crush-copy">
+        <div class="kicker">Три простых шага</div>
+        <h2>Подготовь бутылку к контейнеру</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Прокрути страницу, подготовь бутылку к контейнеру и узнай, что можно сделать дома.</p>
+        <ol class="crush-steps">
+          <li class="crush-step" data-at="0"><span class="n">01</span><div><b>Открути крышку</b><p>Крышка и бутылка сделаны из разных видов пластика. Лучше разделить их заранее.</p></div></li>
+          <li class="crush-step" data-at="0.21"><span class="n">02</span><div><b>Вылей остатки</b><p>Перед тем как выбросить бутылку, освободи её от жидкости. Так содержимое не попадёт на другие материалы в контейнере и на линии.</p></div></li>
+          <li class="crush-step" data-at="0.57"><span class="n">03</span><div><b>Сомни бутылку</b><p>Смятая бутылка занимает меньше места и удобнее проходит дальнейшую сортировку.</p></div></li>
+        </ol>
+        <p class="crush-final">Готово. Бутылка подготовлена к сортировке на заводе.</p>
+        <div class="crush-hint"><span>Крути, чтобы открутить крышку</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg></div>
+      </div>
+      <div class="crush-stage">
+        <svg class="crush-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="track" cx="50" cy="50" r="48"/><circle class="fill" cx="50" cy="50" r="48"/></svg>
+        <div class="crush-disc"><canvas id="crushCanvas" width="720" height="720" role="img" aria-label="По мере прокрутки страницы крышка откручивается, жидкость выливается, бутылка сминается"></canvas></div>
+        <div class="crush-badge" id="crushBadge"><span id="crushBadgeLabel">откручено на</span> <b>0%</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ЦИФРЫ ======== -->
+  <section class="section" style="padding-bottom:64px">
+    <div class="container">
+      <div class="stats reveal-group">
+        <div class="stat"><div class="num"><span data-count="550">550</span><small>тонн</small></div><div class="cap">отходов Экотехнопарк принимает каждый день</div></div>
+        <div class="stat"><div class="num"><span data-count="35">35</span>–<span data-count="40">40</span><small>%</small></div><div class="cap">органической фракции направляется на компостирование</div></div>
+        <div class="stat"><div class="num"><span data-count="650000">650 000</span><small>+</small></div><div class="cap">жителей в зоне обслуживания Экотехнопарка</div></div>
+        <div class="stat"><div class="num"><span data-count="220">220</span><small>+</small></div><div class="cap">рабочих мест создано в Экотехнопарке</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ПРИВЫЧКИ ======== -->
+  <section class="section alt" id="habits">
+    <div class="container">
+      <div class="habits-head">
+        <div class="section-head reveal" style="margin-bottom:0">
+          <div class="kicker">Полезные привычки</div>
+          <h2>Десять простых правил на каждый день</h2>
+          <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="lead">Не нужно становиться экспертом по переработке. Вклад каждого начинается с нескольких простых привычек дома. Они помогают лучше подготовить содержимое контейнера к дальнейшей сортировке, а некоторым материалам становиться ресурсом.</p>
+        </div>
+        <div class="strip-controls">
+          <button type="button" id="stripPrev" aria-label="Назад"><svg class="icon"><use href="#i-arrow-l"/></svg></button>
+          <button type="button" id="stripNext" aria-label="Вперёд"><svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="habit-strip reveal-group" id="habitStrip">
+        <article class="habit"><div class="idx">01</div><div class="cut-disc"><img src="assets/cutouts/habit-01.webp" alt="" fetchpriority="low"></div><h3>Открути крышку. Сомни бутылку.</h3><p>Два простых действия перед тем, как отправить пластиковую бутылку в контейнер.</p></article>
+        <article class="habit"><div class="idx">02</div><div class="cut-disc"><img src="assets/cutouts/habit-02.webp" alt="" fetchpriority="low"></div><h3>Сначала вылей</h3><p>Не оставляй внутри воду, молоко, масло или другую жидкость. Так содержимое бутылки не загрязнит материалы, которые ещё можно отобрать для переработки.</p></article>
+        <article class="habit"><div class="idx">03</div><div class="cut-disc"><img src="assets/cutouts/habit-03.webp" alt="" fetchpriority="low"></div><h3>Пакет не завязывай</h3><p>Оставь пакет открытым. Так его содержимое проще освободить на сортировочной линии.</p></article>
+        <article class="habit"><div class="idx">04</div><div class="cut-disc"><img src="assets/cutouts/habit-04.webp" alt="" fetchpriority="low"></div><h3>Пульверизатор отдельно</h3><p>Сними распылитель с флакона перед тем, как его выбросить. Внутри механизма есть металлическая пружинка, поэтому пульверизатор и флакон важно разделить заранее. Так на линии их можно сортировать отдельно.</p></article>
+        <article class="habit"><div class="idx">05</div><div class="cut-disc"><img src="assets/cutouts/habit-05.webp" alt="" fetchpriority="low"></div><h3>Стаканчик не в макулатуру</h3><p>Бумажный стаканчик только выглядит бумажным. Внутри есть защитное покрытие, из-за которого его нельзя перерабатывать вместе с обычной макулатурой. Лучшее решение на каждый день — многоразовая кружка.</p></article>
+        <article class="habit"><div class="idx">06</div><div class="cut-disc"><img src="assets/cutouts/habit-06.webp" alt="" fetchpriority="low"></div><h3>Банки без отдельного пакета</h3><p>Не заворачивай консервные банки в дополнительный пакет. Так их проще заметить и отобрать на линии.</p></article>
+        <article class="habit"><div class="idx">07</div><div class="cut-disc"><img src="assets/cutouts/habit-07.webp" alt="" fetchpriority="low"></div><h3>Кастрюли и сковородки в обычный контейнер</h3><p>Старая кастрюля или сковородка не требует отдельной упаковки. Её можно отправить в обычный контейнер, дальше она проходит через общий поток.</p></article>
+        <article class="habit"><div class="idx">08</div><div class="cut-disc"><img src="assets/cutouts/habit-08.webp" alt="" fetchpriority="low"></div><h3>Стекло оставь целым</h3><p>Не разбивай стеклянные бутылки специально. Целое стекло безопаснее для сотрудников сортировочной линии и удобнее в дальнейшей сортировке.</p></article>
+        <article class="habit"><div class="idx">09</div><div class="cut-disc"><img src="assets/cutouts/habit-09.webp" alt="" fetchpriority="low"></div><h3>Батарейки сдавай отдельно</h3><p>Батарейки содержат токсичные вещества. При неправильном обращении одна батарейка может загрязнить до 1 м³ почвы. Поэтому батарейки нужно сдавать отдельно.</p></article>
+        <article class="habit"><div class="idx">10</div><div class="cut-disc"><img src="assets/cutouts/habit-10.webp" alt="" fetchpriority="low"></div><h3>Мебель — в отдельные отсеки</h3><p>Старая мебель и другие крупные предметы не должны попадать в обычный контейнер. Для них предназначены отдельные отсеки на контейнерной площадке.</p></article>
+      </div>
+      <div class="habits-actions">
+        <a class="btn btn-primary" href="sorting.html">Полный гид по обращению с отходами</a>
+        <a class="btn btn-secondary" href="memo.html"><svg class="icon"><use href="#i-file"/></svg> Памятка на холодильник</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== КУДА ВЫБРОСИТЬ + КВИЗ ======== -->
+  <section class="section" id="search">
+    <div class="container">
+      <div class="interactive-grid">
+        <div>
+          <div class="section-head reveal" style="margin-bottom:28px">
+            <div class="kicker">Куда выбросить?</div>
+            <h2>Выбери предмет</h2>
+            <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p class="lead">Наш пёс Техногрунт подскажет, куда отправить разные вещи и когда обычного контейнера недостаточно.</p>
+          </div>
+          <div class="chip-row reveal-group" id="chipRow">
+            <button class="chip" data-cat="tires" type="button"><svg class="icon"><use href="#i-tire"/></svg>Шины</button>
+            <button class="chip" data-cat="batteries" type="button"><svg class="icon"><use href="#i-battery"/></svg>Батарейки</button>
+            <button class="chip" data-cat="accum" type="button"><svg class="icon"><use href="#i-accum"/></svg>Аккумуляторы</button>
+            <button class="chip" data-cat="tech" type="button"><svg class="icon"><use href="#i-cpu"/></svg>Бытовая техника</button>
+            <button class="chip" data-cat="constr" type="button"><svg class="icon"><use href="#i-brick"/></svg>Строительные отходы</button>
+            <button class="chip" data-cat="branches" type="button"><svg class="icon"><use href="#i-branch"/></svg>Ветки</button>
+            <button class="chip" data-cat="glass" type="button"><svg class="icon"><use href="#i-glass"/></svg>Стеклянные бутылки</button>
+            <button class="chip" data-cat="bulky" type="button"><svg class="icon"><use href="#i-box"/></svg>Крупногабаритные отходы</button>
+          </div>
+          <div class="chip-answer" id="chipAnswer" aria-live="polite">
+            <div class="cut-disc"><img id="chipImg" src="assets/cutouts/cat-tires.webp" alt="" loading="lazy"></div>
+            <div>
+              <span class="status-tag" id="chipStatus"></span>
+              <h3 id="chipTitle"></h3>
+              <dl class="chip-facts" id="chipFacts"></dl>
+            </div>
+          </div>
+        </div>
+        <div class="interactive-side">
+          <a class="card card-green reveal" href="sorting.html#quiz" style="--i:1">
+            <div class="icon-disc"><svg class="icon"><use href="#i-check"/></svg></div>
+            <h3>А ты правильно обращаешься с отходами?</h3>
+            <p>Техногрунт подготовил 10 вопросов о привычках, которые начинаются ещё дома. Проверь, насколько хорошо ты знаешь эти правила.</p>
+          </a>
+          <a class="card card-mint reveal" href="memo.html" style="--i:2">
+            <div class="icon-disc"><svg class="icon"><use href="#i-file"/></svg></div>
+            <h3>Памятка на холодильник</h3>
+            <p>10 главных правил на одном листе А4. Можно сохранить, распечатать и больше не вспоминать каждый раз, куда деть крышку или зачем сминать бутылку.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== КТО МЫ ======== -->
+  <section class="section dark about" id="about">
+    <div class="container">
+      <div class="reveal">
+        <div class="kicker">Кто мы</div>
+        <h2>Отходы могут стать ресурсом</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>Экотехнопарк работает в Стебаево и обслуживает территорию, на которой живут более 650 000 человек. Ежедневно сюда поступает общий поток ТКО, который проходит несколько этапов сортировки и обработки.</p>
+        <aside class="tko-note">
+          <div class="tko-face"><img src="assets/dog/face.webp" alt="" width="512" height="512" loading="lazy"></div>
+          <p><b>ТКО</b> — твёрдые коммунальные отходы. Проще говоря, то, что каждый день оказывается в домашнем мусорном ведре.</p>
+        </aside>
+        <p>Наша задача — отделять материалы, пригодные для дальнейшей переработки, возвращать как можно больше сырья в оборот и сокращать объём, который отправляется на полигон.</p>
+        <p class="muted-dark">Но работа системы начинается ещё до сортировочной линии. Она складывается и из наших повседневных привычек. Поэтому мы открыто показываем, что происходит после контейнера, объясняем сложные процессы простым языком и рассказываем, как правильно обращаться с отходами дома.</p>
+        <p class="muted-dark">Для нас важно, чтобы забота об окружающей среде начиналась с понятных действий. Чем внимательнее мы относимся к тому, что выбрасываем, тем больше материалов можно сохранить в обороте.</p>
+        <div class="mascot-line mascot-plain">
+          <div class="mascot-disc"><img src="assets/dog/point.webp" alt="Техногрунт" width="512" height="512" loading="lazy"></div>
+          <p><b>Гав! Я Техногрунт, эксперт по обращению с отходами.</b> Знаю этот завод от ворот до последней линии. Буду показывать, куда едет твой пакет, что происходит внутри и какие привычки действительно помогают.</p>
+        </div>
+      </div>
+      <div class="about-media reveal from-right" style="--i:1">
+        <div class="circle"><img src="assets/photos/process-landfill-720.jpg" alt="Сотрудник Экотехнопарка рядом с экскаватором на полигоне" width="720" height="720" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ПУТЬ ПАКЕТА ======== -->
+  <section class="section" id="how">
+    <div class="pattern-side head-only" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Путь мусорного пакета</div>
+        <h2>Куда он едет после контейнера?</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Проследим весь путь и разберёмся, что происходит после того, как мусоровоз забирает содержимое контейнера.</p>
+      </div>
+      <div class="process">
+        <div class="pstep reveal" style="--i:0"><div class="circle"><img src="assets/photos/process-arrival-720.jpg" alt="Мусоровоз у приёмного отделения Экотехнопарка" width="720" height="720" loading="lazy"></div><span class="num">1</span><div><h3>С чего всё начинается?</h3><p>Мусоровоз въезжает на территорию Экотехнопарка, проходит взвешивание и разгружается в приёмном отделении.</p></div></div>
+        <div class="pstep reveal" style="--i:1"><div class="circle"><img src="assets/photos/process-line-720.jpg" alt="Конвейеры подают отходы на сортировочную линию" width="720" height="720" loading="lazy"></div><span class="num">2</span><div><h3>Что происходит с пакетом?</h3><p>Мусорный пакет поступает на сортировочную линию. Разрыватель раскрывает пакеты, чтобы содержимое можно было сортировать дальше.</p></div></div>
+        <div class="pstep reveal" style="--i:2"><div class="circle"><img src="assets/photos/process-sorting-720.jpg" alt="Отходы внутри сортировочного барабана" width="720" height="720" loading="lazy"></div><span class="num">3</span><div><h3>Как работает сортировка?</h3><p>Содержимое пакета проходит несколько этапов сортировки. Барабан, оптические и магнитные сепараторы разделяют материалы на разные фракции. Часть из них дополнительно отбирают вручную сотрудники сортировочной линии.</p></div></div>
+        <div class="pstep reveal" style="--i:3"><div class="circle"><img src="assets/photos/process-shipping-720.jpg" alt="Погрузка кип вторсырья в фуру для отправки переработчикам" width="720" height="720" loading="lazy"></div><span class="num">4</span><div><h3>Куда отправляется вторсырьё?</h3><p>Отобранные материалы прессуют в кипы и готовят к отправке переработчикам. Органическая фракция проходит отдельную обработку.</p></div></div>
+        <div class="pstep reveal" style="--i:4"><div class="circle"><img src="assets/photos/process-landfill-720.jpg" alt="Экскаватор укладывает спрессованные отходы на полигоне" width="720" height="720" loading="lazy"></div><span class="num">5</span><div><h3>А что остаётся?</h3><p>То, что невозможно вернуть в оборот, направляется на полигон, устроенный в соответствии с действующими требованиями экологической безопасности.</p></div></div>
+      </div>
+      <div class="process-foot reveal">
+        <a class="btn btn-secondary" href="sorting.html">Что я могу сделать дома</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ПОКАЗАТЕЛИ ======== -->
+  <section class="section tint" id="figures">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">В цифрах</div>
+        <h2>Сколько мы уже приняли</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Данные обновляем каждый месяц. Они показывают масштаб работы Экотехнопарка и объём, который проходит через систему сортировки и обработки.</p>
+      </div>
+      <div class="figures reveal-group">
+        <div class="figure"><div class="disc"><span data-count="159460">159 460</span></div><div class="what">тонн принято за 2025 год</div><div class="out">первый полный год работы Экотехнопарка</div></div>
+        <div class="figure"><div class="disc"><span data-count="160928.96" data-decimals="2">160 928,96</span></div><div class="what">тонн поступило на обработку</div><div class="out">за десять месяцев 2026 года</div></div>
+        <div class="figure"><div class="disc"><span data-count="67364.95" data-decimals="2">67 364,95</span></div><div class="what">тонн направлено на утилизацию</div><div class="out">за десять месяцев 2026 года</div></div>
+      </div>
+      <p class="figures-note reveal">Состояние окружающей среды вокруг Экотехнопарка контролируется постоянно: экологический мониторинг проводится ежемесячно.</p>
+    </div>
+  </section>
+
+  <!-- ======== ПАРТНЁРСТВО ======== -->
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Партнёрство</div>
+        <h2>Во что превращается вторсырьё</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">На сортировке путь материала не заканчивается. Отобранное вторсырьё прессуют в кипы и передают переработчикам. Там пластик, стекло, металл и бумага становятся сырьём для новых вещей.</p>
+      </div>
+      <div class="transform-rows">
+        <div class="trow reveal" style="--i:0">
+          <div class="cut-disc"><img src="assets/cutouts/partner-can.webp" alt="" loading="lazy"></div>
+          <div><div class="qty"><b data-count="400">400</b>алюминиевых банок</div><div class="leader"></div><div class="out">детский велосипед</div></div>
+          <div class="cut-disc product-disc"><img src="assets/cutouts/partner-bike.webp" alt="Детский велосипед" loading="lazy"></div>
+          <div class="product">Алюминий можно переплавлять и снова использовать в производстве.</div>
+        </div>
+        <div class="trow reveal" style="--i:1">
+          <div class="cut-disc"><img src="assets/cutouts/partner-pet.webp" alt="" loading="lazy"></div>
+          <div><div class="qty"><b data-count="25">25</b>пластиковых бутылок</div><div class="leader"></div><div class="out">спортивная форма</div></div>
+          <div class="cut-disc product-disc"><img src="assets/cutouts/partner-sportswear.webp" alt="Спортивная форма" loading="lazy"></div>
+          <div class="product">ПЭТ измельчают во флекс, из которого получают волокно для ткани.</div>
+        </div>
+        <div class="trow reveal" style="--i:2">
+          <div class="cut-disc"><img src="assets/cutouts/partner-glass.webp" alt="" loading="lazy"></div>
+          <div><div class="qty"><b data-count="50">50</b>стеклянных бутылок</div><div class="leader"></div><div class="out">пеностекло</div></div>
+          <div class="cut-disc product-disc"><img src="assets/cutouts/partner-foamglass.webp" alt="Пеностекло" loading="lazy"></div>
+          <div class="product">Стеклобой используют как сырьё для производства пеностекла.</div>
+        </div>
+      </div>
+      <div class="partners-block">
+        <div class="section-head reveal" style="margin:64px 0 28px">
+          <h3 class="h2-sub">Кому уезжает вторсырьё</h3>
+          <p class="lead">После сортировки и прессования материалы передаём компаниям, которые специализируются на их дальнейшей переработке.</p>
+        </div>
+        <div class="partner-grid">
+          <article class="partner-card reveal" style="--i:0"><h4>Эколайн Вторпласт</h4><p>ПНД: канистра и флакон. ПЭТ микс</p><div class="partner-vol"><b data-count="100">100</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:1"><h4>Втор-Комм</h4><p>ПЭТ прозрачный и технический</p><div class="partner-vol"><b data-count="75">75</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:2"><h4>Фантастик пластик</h4><p>ПЭТ прозрачный и микс. Входит в «Технониколь»</p><div class="partner-vol"><b data-count="60">60</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:3"><h4>ПЭТ Пром</h4><p>ПЭТ прозрачный и микс. Острогожск</p><div class="partner-vol"><b data-count="200">200</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:4"><h4>ДПЛ Полимер</h4><p>ПНД: канистра и флакон</p><div class="partner-vol"><b data-count="30">30</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:0"><h4>Полимерные материалы</h4><p>ПВД плёнка: прозрачная и микс</p><div class="partner-vol"><b data-count="120">120</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:1"><h4>Стеклоком</h4><p>Стеклобой</p><div class="partner-vol"><b data-count="300">300</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:2"><h4>Центурион</h4><p>Алюминиевая банка</p><div class="partner-vol"><b data-count="30">30</b> тонн в месяц</div></article>
+          <article class="partner-card reveal" style="--i:3"><h4>Л-Пак</h4><p>Картон, макулатура, тетрапак</p><div class="partner-vol"><b data-count="200">200</b> тонн в месяц</div></article>
+        </div>
+      </div>
+      <div class="partners-cta reveal">
+        <div>
+          <h3>Работаете со вторсырьём?</h3>
+          <p>Отгружаем отобранные фракции: ПЭТ, ПВД, ПНД, плёнку, стеклобой, алюминиевую банку, картон и макулатуру. По вопросам сотрудничества и поставок звоните по общему номеру.</p>
+        </div>
+        <div class="partners-cta-actions">
+          <a class="btn btn-primary" href="tel:+74742261561"><svg class="icon"><use href="#i-phone"/></svg> +7 (4742) 261-561</a>
+          <a class="btn btn-secondary" href="mailto:info@ccg48.ru"><svg class="icon"><use href="#i-mail"/></svg> info@ccg48.ru</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="cta-band">
+    <div class="pattern-dark" aria-hidden="true" style="left:auto;width:36%"></div>
+    <div class="container">
+      <div class="reveal">
+        <h2>Начни с одной бутылки</h2>
+        <p>Открути крышку, вылей остатки и сомни бутылку. Несколько простых действий дома помогают материалу лучше пройти сортировку, а всей системе эффективнее возвращать полезные ресурсы в оборот.</p>
+      </div>
+      <a class="btn btn-white reveal" style="--i:1" href="sorting.html">Как обращаться с отходами <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ======== FAQ ======== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Вопрос — ответ</div>
+        <h2>Частые вопросы</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="faq reveal-group">
+        <details><summary>Если отходы едут в одной машине, зачем что-то делать дома?</summary><p>В нашей зоне обслуживания весь поток поступает на территорию Экотехнопарка вместе и разделяется уже на сортировочной линии. Но то, в каком состоянии упаковка попадает в контейнер, тоже имеет значение. Пустую и подготовленную упаковку проще отделить от общего потока и направить на дальнейшую переработку. Поэтому дома не нужно сортировать всё на десятки категорий, достаточно следовать нескольким простым правилам.</p></details>
+        <details><summary>На заводе бывает запах? Это безопасно для соседних населённых пунктов?</summary><p>На предприятии такого типа запах может возникать. При этом состояние окружающей среды контролируется постоянно. Экологический мониторинг проводится ежемесячно.</p></details>
+        <details><summary>Какие материалы завод отбирает для переработки?</summary><p>На линии отбираем ПЭТ, ПВД, ПНД, плёнку, стекло, алюминиевую банку, картон и макулатуру.</p></details>
+        <details><summary>Что делать с бумагой и картоном?</summary><p>Картон и бумага могут быть отобраны на сортировочной линии и направлены переработчикам. Лучше, если бумага остаётся сухой и не загрязнена пищевыми отходами. Отдельно привозить её на завод не нужно.</p></details>
+                <details><summary>Что делают из вторсырья после сортировки?</summary><p>Отобранные материалы отправляются партнёрам-переработчикам. Пластик превращается в гранулу или волокно, стекло и алюминий переплавляют, бумагу и картон используют как сырьё для новой продукции. Подробнее об этом рассказываем в разделе «Партнёрство».</p></details>
+        <details><summary>Можно ли устроиться к вам на работу?</summary><p>Да. По вопросам вакансий звоните по общему номеру: <a href="tel:+74742261561">+7 (4742) 261-561</a>. Специалисты подскажут, к кому обратиться дальше.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== КОНТАКТЫ ======== -->
+  <section class="section alt" id="contacts">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Контакты</div>
+        <h2>Как с нами связаться</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="contact-list contact-pair reveal-group">
+        <div class="contact"><div class="icon-disc"><svg class="icon"><use href="#i-phone"/></svg></div><div><h3>Телефон</h3><p>По всем вопросам: <a href="tel:+74742261561">+7 (4742) 261-561</a></p></div></div>
+        <div class="contact"><div class="icon-disc"><svg class="icon"><use href="#i-mail"/></svg></div><div><h3>Почта</h3><p><a href="mailto:info@ccg48.ru">info@ccg48.ru</a></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ФУТЕР ======== -->
+  <footer class="footer">
+    <div class="pattern-dark" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>ССГ · Экотехнопарк Липецкого района</h4>
+          <p>Собираем. Сортируем. Группируем. Отделяем полезные материалы и возвращаем их в оборот.</p>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <a href="sorting.html">Как обращаться с отходами</a>
+          <a href="#habits">Полезные привычки</a>
+          <a href="#about">Кто мы</a>
+          <a href="#partners">Партнёрство</a>
+        </div>
+        <div>
+          <h4>Жителям</h4>
+          <a href="memo.html">Памятка по обращению с отходами</a>
+          <a href="sorting.html#quiz">Квиз</a>
+          <a href="#search">Куда это выбросить?</a>
+          <a href="tel:+74742261561">Вакансии</a>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="tel:+74742261561">+7 (4742) 261-561</a>
+          <a href="mailto:info@ccg48.ru">info@ccg48.ru</a>
+          <a href="https://vk.com/ccg48" target="_blank" rel="noopener">Мы во ВКонтакте</a>
+          <a href="https://t.me/ccg48" target="_blank" rel="noopener">Мы в Telegram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ООО «СтройСельхозГарант»</span>
+        <div class="social"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== ТЕХНОГРУНТ ======== -->
+  <div class="dog-widget" id="dogWidget">
+    <div class="dog-widget-bubble" id="dogBubble" role="status">
+      <button class="dog-widget-close" id="dogClose" type="button" aria-label="Закрыть">×</button>
+      <b>Гав! Я Техногрунт, эксперт по обращению с отходами.</b> Я свои правила знаю. А ты? <a href="sorting.html#quiz">Пройди квиз</a> и проверь себя.
+    </div>
+    <button class="dog-widget-btn has-clip" id="dogBtn" type="button" aria-label="Техногрунт"><img src="assets/dog/face.webp" alt="" width="512" height="512"><video src="assets/dog/face.mp4" autoplay loop muted playsinline preload="metadata"></video></button>
+  </div>
+
+  <script>
+    // ---- Мобильное меню
+    var burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      mm.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+    }
+    burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+    mm.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+    // ---- Куда выбросить
+    var CATS = {
+      tires: { title: 'Шины', ok: false, where: 'в пункт приёма шин. Адреса в Липецке появятся здесь, пока их можно уточнить по телефону +7 (4742) 261-561.', note: 'шины нельзя выбрасывать в бак ТКО.' },
+      batteries: { title: 'Батарейки', ok: false, where: 'в специальные контейнеры для сбора батареек в школах, магазинах и торговых центрах.', note: 'в обычный контейнер батарейки бросать нельзя.' },
+      accum: { title: 'Автомобильные аккумуляторы', ok: false, where: 'в специально отведённое оператором место.', note: 'в обычный контейнер аккумуляторы бросать нельзя.' },
+      tech: { title: 'Бытовая техника', ok: true, where: 'в общий бак ТКО.', prep: 'вынуть батарейки и аккумуляторы, если они есть, и сдать их отдельно.' },
+      constr: { title: 'Строительные отходы', ok: false, where: 'крупногабаритные строительные отходы складывают в специальный отсек на контейнерной площадке.' },
+      branches: { title: 'Ветки', ok: false, where: 'порядок вывоза растительных отходов уточняем, инструкция появится здесь.', note: 'ветки нельзя выбрасывать в бак ТКО.' },
+      glass: { title: 'Стеклянные бутылки', ok: true, where: 'в общий бак ТКО.', prep: 'не разбивать специально.', note: 'целое стекло безопаснее для сотрудников сортировочной линии и удобнее в сортировке.' },
+      bulky: { title: 'Крупногабаритные отходы', ok: false, where: 'старая мебель и другие крупные предметы — в отдельные отсеки на контейнерной площадке.', note: 'мелкий мусор в такой отсек бросать не нужно, для него есть обычный бак.' }
+    };
+    var chipRow = document.getElementById('chipRow'), panel = document.getElementById('chipAnswer');
+    chipRow.addEventListener('click', function (e) {
+      var btn = e.target.closest('.chip'); if (!btn) return;
+      chipRow.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = CATS[btn.dataset.cat];
+      document.getElementById('chipTitle').textContent = cat.title;
+      var facts = document.getElementById('chipFacts'), rows = '';
+      [['Куда', cat.where], ['Как подготовить', cat.prep], ['Важно', cat.note]].forEach(function (r) {
+        if (r[1]) rows += '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>';
+      });
+      facts.innerHTML = rows;
+      var img = document.getElementById('chipImg'), src = 'assets/cutouts/cat-' + btn.dataset.cat + '.webp';
+      if (window.ssgMotion) ssgMotion.swapImage(img, src); else img.src = src;
+      var st = document.getElementById('chipStatus');
+      st.textContent = cat.ok ? 'В общий бак ТКО' : 'Нужно отдельное обращение';
+      st.className = 'status-tag ' + (cat.ok ? 'status-ok' : 'status-tbd');
+      panel.classList.remove('show'); void panel.offsetWidth; panel.classList.add('show');
+    });
+
+    // Картинки ответов подгружаем заранее: по клику круг не пустеет даже на медленной сети
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        Array.prototype.forEach.call(document.querySelectorAll('#chipRow .chip'), function (b) {
+          var im = new Image(); im.decoding = 'async'; im.src = 'assets/cutouts/cat-' + b.dataset.cat + '.webp';
+        });
+      }, 1500);
+    });
+
+    // ---- Лента привычек
+    var strip = document.getElementById('habitStrip');
+    document.getElementById('stripPrev').addEventListener('click', function () { strip.scrollBy({ left: -308, behavior: 'smooth' }); });
+    document.getElementById('stripNext').addEventListener('click', function () { strip.scrollBy({ left: 308, behavior: 'smooth' }); });
+
+    // ---- Техногрунт
+    var dogBubble = document.getElementById('dogBubble');
+    var dogSeen = false;
+    try { dogSeen = sessionStorage.getItem('tg-hello') === '1'; } catch (e) {}
+    // На телефоне пузырь не показываем сам — он перекрывал бы кнопки; откроется по тапу
+    if (!dogSeen && window.matchMedia('(min-width: 601px)').matches) setTimeout(function () { dogBubble.classList.add('show'); }, 1800);
+    document.getElementById('dogClose').addEventListener('click', function () {
+      dogBubble.classList.remove('show');
+      try { sessionStorage.setItem('tg-hello', '1'); } catch (e) {}
+    });
+    document.getElementById('dogBtn').addEventListener('click', function () { dogBubble.classList.toggle('show'); });
+  </script>
+  <script src="motion.js" defer></script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="motion-max.js" defer></script>
+
+</body>
+</html>

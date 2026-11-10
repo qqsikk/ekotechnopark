@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена — ССГ · Экотехнопарк</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#25605C">
+  <!-- Пути от корня: 404 может открыться по любому адресу, в том числе вложенному -->
+  <link rel="icon" href="/assets/logo-symbol.png" type="image/png">
+  <link rel="preload" href="/assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .nf { min-height: 100vh; display: flex; align-items: center; background: var(--grey-100); }
+    .nf .container { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; padding-block: 48px; }
+    .nf img.dog { width: 200px; height: auto; }
+    .nf .logo { display: inline-block; margin-bottom: 28px; }
+    .nf .logo img { height: 36px; }
+    .nf h1 { font-size: clamp(30px, 5vw, 48px); color: var(--green-700); line-height: 1.08; }
+    .nf p { margin-top: 14px; font-size: 18px; color: var(--ink-600); max-width: 46ch; }
+    .nf .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    @media (max-width: 640px) {
+      .nf .container { grid-template-columns: 1fr; gap: 20px; }
+      .nf img.dog { width: 140px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="container">
+      <img class="dog" src="/assets/dog/sad.webp" alt="Техногрунт" width="512" height="512">
+      <div>
+        <a class="logo" href="/" aria-label="ССГ — на главную"><img src="/assets/logo-short.png" alt="ССГ"></a>
+        <h1>Такой страницы нет</h1>
+        <p>Гав! Обнюхал всё вокруг, но здесь пусто. Возможно, ссылка устарела или в адресе опечатка.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/">На главную</a>
+          <a class="btn btn-secondary" href="/sorting.html">Как обращаться с отходами</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+# Экотехнопарк ССГ — настройки для виртуального хостинга TimeWeb (Apache 2.4 за nginx).
+# Сайт статический: только HTML, CSS, JS, картинки, видео и шрифты.
+
+AddDefaultCharset UTF-8
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# Типы файлов: старые конфигурации Apache не знают webp и woff2 и отдают их
+# как application/octet-stream — браузер может не показать картинку.
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddType application/javascript .js
+  AddCharset utf-8 .html .css .js .txt .xml
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Служебные файлы с точкой в начале имени не отдаём. .well-known оставлен:
+  # через него TimeWeb подтверждает домен при выпуске SSL-сертификата.
+  RewriteRule "(^|/)\.(?!well-known/)" - [F]
+
+  # HTTPS. Включить ТОЛЬКО после того, как в панели выпущен сертификат,
+  # иначе сайт уйдёт в бесконечную переадресацию. Можно вместо этого включить
+  # «Перенаправлять на HTTPS» в настройках сайта в панели TimeWeb.
+  # RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Сжатие текстовых файлов
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Кэш в браузере. CSS и JS при сборке получают ?v=<хеш содержимого>, поэтому их
+# можно держать долго: после правки меняется адрес и браузер берёт новую версию.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

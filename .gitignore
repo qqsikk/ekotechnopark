@@ -1,0 +1,30 @@
+# Local tools and credentials
+/.vercel/
+/.claude/
+/.codex/
+.mcp.json
+.env
+.env.*
+!.env.example
+
+# Generated output and dependencies
+/_deploy/
+node_modules/
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+Thumbs.db
+
+# Source materials, drafts and local backups
+/_archive/
+/photos/
+/pravki/
+*Design System/
+*.mov
+*.docx
+*.pdf
+*.psd
+*.ai
+*.bundle
+*.bak

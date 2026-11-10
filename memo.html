@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Памятка по обращению с отходами — ССГ · Экотехнопарк</title>
+<meta name="description" content="Памятка на холодильник: 10 простых привычек на каждый день и список отходов, которым нужно отдельное обращение. Один лист А4 под печать.">
+<meta name="theme-color" content="#25605C">
+<link rel="icon" href="assets/logo-symbol.png">
+<link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: var(--grey-100); }
+
+  /* ---------- Панель печати: только на экране ---------- */
+  .memo-bar { position: sticky; top: 0; z-index: 10; background: var(--green-900); padding: 14px 0; }
+  .memo-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .memo-bar p { font-size: 14px; color: var(--on-dark-muted); }
+  .memo-bar .btn { flex: none; }
+
+  /* ---------- Лист ---------- */
+  .sheet { width: 210mm; min-height: 297mm; margin: 24px auto; background: var(--white); padding: 12mm 12mm 10mm; box-shadow: 0 8px 24px rgba(16,74,71,.10); position: relative; overflow: hidden; }
+
+  .sheet-head { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: end; border-bottom: 2px solid var(--green-700); padding-bottom: 6px; }
+  .sheet-head .slogan { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--teal-500); font-weight: 500; }
+  .sheet-head h1 { font-size: 29px; line-height: 1.04; color: var(--green-700); font-weight: 700; margin-top: 4px; }
+  .sheet-head .sub { font-size: 15px; color: var(--ink-600); margin-top: 4px; }
+  .sheet-head img { height: 28px; margin-left: auto; margin-bottom: 6px; display: block; }
+  .sheet-head .who { text-align: right; font-size: 10px; line-height: 1.5; color: var(--ink-400); }
+
+  .memo-intro { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--ink-600); max-width: 152mm; }
+
+  /* ---------- Десять карточек, две колонки ---------- */
+  .memo-habits { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; margin-top: 9px; }
+  .memo-habit { display: grid; grid-template-columns: 17mm 1fr; gap: 8px; align-items: center; border: 1px solid var(--grey-200); border-radius: var(--radius-card); padding: 4px 9px 4px 5px; background: var(--white); }
+  .memo-habit .pic { width: 17mm; height: 17mm; border-radius: var(--radius-btn); background: var(--teal-050); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .memo-habit .pic img { width: 92%; height: 92%; object-fit: contain; mix-blend-mode: multiply; }
+  .memo-habit .n { font-size: 16px; font-weight: 700; color: var(--teal-500); line-height: 1; font-variant-numeric: tabular-nums; }
+  .memo-habit b { display: block; font-size: 13.5px; font-weight: 500; line-height: 1.2; color: var(--ink-900); margin: 1px 0; }
+  .memo-habit span { display: block; font-size: 11.5px; line-height: 1.3; color: var(--ink-600); }
+
+  /* ---------- Одиннадцатый блок: предупреждение во всю ширину ---------- */
+  .memo-warn { margin-top: 7px; border: 2px solid var(--orange-500); border-radius: var(--radius-card); background: var(--orange-100); padding: 8px 12px; }
+  .memo-warn h2 { font-size: 15px; font-weight: 500; color: #9C4A12; }
+  .memo-warn ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 5px; }
+  .memo-warn li { font-size: 12px; color: var(--ink-900); background: var(--white); border-radius: var(--radius-pill); padding: 2px 10px; }
+  .memo-warn p { font-size: 11.5px; color: var(--ink-600); margin-top: 5px; }
+
+  /* ---------- Финал ---------- */
+  .memo-foot { margin-top: 8px; padding-top: 7px; border-top: 1px solid var(--grey-200); display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; align-items: end; }
+  .memo-foot h2 { font-size: 16px; font-weight: 500; color: var(--green-700); text-wrap: balance; }
+  .memo-foot p { font-size: 11.5px; line-height: 1.45; color: var(--ink-600); margin-top: 5px; max-width: 108mm; }
+
+  /* Техногрунт: реплика в облачке, сами псы стоят в углу листа */
+  .memo-say { position: relative; max-width: none; margin-top: 7px; margin-right: 6px; background: var(--teal-050); border: 1px solid var(--teal-100); border-radius: var(--radius-card); padding: 7px 11px 8px; font-size: 12.5px; line-height: 1.38; color: var(--ink-600); }
+  .memo-say b { color: var(--green-700); font-weight: 500; }
+  .memo-say::after { content: ''; position: absolute; right: -6px; bottom: 7mm; width: 11px; height: 11px; background: var(--teal-050); border-top: 1px solid var(--teal-100); border-right: 1px solid var(--teal-100); transform: rotate(45deg); }
+  .memo-pack { display: flex; align-items: flex-end; justify-content: flex-end; gap: 1mm; }
+  .memo-pack img { display: block; width: auto; flex: none; }
+  .memo-pack .dog-near { height: 54mm; }
+
+  .memo-sign { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--grey-200); display: flex; justify-content: space-between; gap: 12px; font-size: 11px; color: var(--ink-400); }
+
+  /* ---------- Экран поменьше ---------- */
+  @media screen and (max-width: 820px) {
+    .sheet { width: auto; min-height: 0; margin: 16px; padding: 20px 18px; }
+    .memo-habits { grid-template-columns: 1fr; }
+    .memo-habit { grid-template-columns: 16mm 1fr; }
+    .memo-habit .pic { width: 16mm; height: 16mm; }
+    .sheet-head { grid-template-columns: 1fr; }
+    .sheet-head .who, .sheet-head img { text-align: left; margin-left: 0; }
+    .memo-foot { grid-template-columns: 1fr; }
+    .memo-pack { justify-content: flex-start; }
+    .memo-pack .dog-near { height: 38mm; }
+    .memo-say::after { display: none; }
+  }
+
+  /* ---------- Печать ---------- */
+  @media print {
+    @page { size: A4 portrait; margin: 9mm; }
+    html, body { background: #fff; }
+    .memo-bar { display: none !important; }
+    .sheet { width: auto; min-height: 0; margin: 0; box-shadow: none; padding: 0; }
+    .memo-habits { grid-template-columns: 1fr 1fr; }
+    .memo-habit { grid-template-columns: 17mm 1fr; }
+    .memo-habit .pic { width: 17mm; height: 17mm; }
+    .sheet-head { grid-template-columns: 1fr auto; }
+    .sheet-head .who { text-align: right; }
+    .sheet-head img { margin-left: auto; }
+    .memo-foot { grid-template-columns: 1fr auto; }
+    .sheet > *, .memo-habit, .memo-warn, .memo-foot { break-inside: avoid; page-break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="memo-bar">
+  <div class="container">
+    <p>Памятка на холодильник. Нажмите «Печать» и выберите «Сохранить в PDF» — получится лист А4.</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn btn-white" id="printBtn" type="button">Печать или сохранить в PDF</button>
+      <a class="btn btn-on-dark" href="sorting.html">Вернуться к гиду</a>
+    </div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="sheet-head">
+    <div>
+      <div class="slogan">Собираем. Сортируем. Группируем.</div>
+      <h1>Памятка по обращению с отходами</h1>
+      <div class="sub">10 простых привычек на каждый день</div>
+    </div>
+    <div>
+      <img src="assets/logo-short.png" alt="ССГ">
+      <div class="who">Экотехнопарк Липецкого района<br>ООО «СтройСельхозГарант»<br>ekotechnopark.vercel.app</div>
+    </div>
+  </div>
+
+  <p class="memo-intro">Несколько простых действий дома помогают лучше подготовить содержимое контейнера к дальнейшей сортировке, а некоторым материалам — стать ресурсом.</p>
+
+  <div class="memo-habits">
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/01.webp" alt=""></div>
+      <div><div class="n">01</div><b>Открути крышку. Сомни бутылку.</b><span>Перед тем как выбросить пластиковую бутылку, сними крышку и сомни её. Так она занимает меньше места и лучше проходит сортировку.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/02.webp" alt=""></div>
+      <div><div class="n">02</div><b>Сначала вылей</b><span>Не оставляй внутри воду, молоко, масло или другую жидкость. Остатки могут загрязнить материалы, которые ещё можно отобрать для переработки.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/03.webp" alt=""></div>
+      <div><div class="n">03</div><b>Пакет не завязывай</b><span>Оставь пакет открытым. Так его содержимое проще освободить на сортировочной линии.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/04.webp" alt=""></div>
+      <div><div class="n">04</div><b>Пульверизатор отдельно</b><span>Сними распылитель с флакона. Они из разных материалов, и разделить их лучше заранее.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/05.webp" alt=""></div>
+      <div><div class="n">05</div><b>Стаканчик не в макулатуру</b><span>Внутри есть защитное покрытие, поэтому вместе с обычной макулатурой его не перерабатывают. На каждый день лучше многоразовая кружка.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/06.webp" alt=""></div>
+      <div><div class="n">06</div><b>Банки без отдельного пакета</b><span>Не заворачивай консервные банки в пакет. Так их проще заметить и отобрать на линии.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/07.webp" alt=""></div>
+      <div><div class="n">07</div><b>Кастрюли и сковородки в обычный контейнер</b><span>Старую кастрюлю или сковородку можно отправить в обычный контейнер вместе с другими отходами.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/08.webp" alt=""></div>
+      <div><div class="n">08</div><b>Стекло оставь целым</b><span>Не разбивай стеклянные бутылки специально. Целое стекло безопаснее для сотрудников сортировочной линии.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/09.webp" alt=""></div>
+      <div><div class="n">09</div><b>Батарейки, аккумуляторы и вейпы отдельно</b><span>Устройства с элементами питания нельзя отправлять в обычный контейнер. Для них нужны специальные пункты приёма.</span></div>
+    </div>
+    <div class="memo-habit">
+      <div class="pic"><img src="assets/memo/10.webp" alt=""></div>
+      <div><div class="n">10</div><b>Крупным вещам — отдельный бункер</b><span>Старую мебель и другие крупные предметы отправляй в контейнер для крупногабаритных отходов, а не в обычный бак.</span></div>
+    </div>
+  </div>
+
+  <div class="memo-warn">
+    <h2>Не всё можно выбросить в обычный контейнер</h2>
+    <ul>
+      <li>Шины</li>
+      <li>Ветки</li>
+      <li>Строительные отходы</li>
+      <li>Батарейки и аккумуляторы</li>
+      <li>Вейпы и электронные сигареты</li>
+      <li>Крупногабаритные отходы</li>
+    </ul>
+    <p>Технику можно выбросить в общий бак ТКО, если вынуть батарейки и аккумуляторы и сдать их отдельно.</p>
+  </div>
+
+  <div class="memo-foot">
+    <div>
+      <h2>Простые привычки складываются в большой результат</h2>
+      <p>То, как мы обращаемся с отходами дома, влияет на всю систему дальше. Чем меньше загрязнённых и неподходящих отходов попадает в общий поток, тем больше полезных материалов можно сохранить и тем меньше нагрузка на окружающую среду.</p>
+      <p class="memo-say"><b>Гав!</b> Один пакет я за тебя не соберу. А вот десять правил уже подсказал. Осталось только запомнить.</p>
+    </div>
+    <div class="memo-pack">
+      <img class="dog-near" src="assets/memo/dog-cheer.webp" alt="Техногрунт">
+    </div>
+  </div>
+
+  <div class="memo-sign">
+    <span>ССГ · Экотехнопарк Липецкого района</span>
+    <span>Собираем. Сортируем. Группируем.</span>
+  </div>
+</div>
+
+<script>
+  document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+  if (location.hash === '#print') setTimeout(function () { window.print(); }, 600);
+</script>
+</body>
+</html>

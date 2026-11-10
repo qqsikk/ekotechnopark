@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как обращаться с отходами — ССГ · Экотехнопарк</title>
+  <meta name="description" content="Раздельных контейнеров пока нет: отходы поступают общим потоком. Три простых действия дома, какие материалы отбирает линия и квиз с Техногрунтом.">
+  <meta name="theme-color" content="#25605C">
+  <link rel="icon" href="assets/logo-symbol.png" type="image/png">
+  <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="motion-max.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 2h4v3l2 3v12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8l2-3V2z"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M10 2h4v4l2 3v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9l2-3V2z"/><path d="M8 13h8"/></symbol>
+  <symbol id="i-can" viewBox="0 0 24 24"><path d="M7 5v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5"/><ellipse cx="12" cy="5" rx="5" ry="1.8"/><path d="M7 9h10"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 24 24"><path d="M4 10h16v7a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-7z"/><path d="M2 10h20"/><path d="M9 10V7h6v3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c0-9 5-14 16-16-1 11-6 16-16 16z"/><path d="M4 20l8-8"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="8" width="14" height="8"/><path d="M17 10h2v4h-2"/><path d="M6 10.5v3M9 10.5v3"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M9 12v2M15 12v2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></symbol>
+</svg>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>Липецкий муниципальный округ, Стебаевский сельсовет, территория экотехнопарка</span>
+        <span class="keep"><a href="tel:+74742261561">+7 (4742) 261-561</a></span>
+        <span>Завод — ежедневно 8:00–20:00</span>
+      </div>
+      <div class="social" aria-label="Соцсети"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="ССГ — на главную"><img src="assets/logo-short.png" alt="ССГ"></a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="active" href="sorting.html">Как обращаться с отходами</a>
+        <a href="index.html#habits">Полезные привычки</a>
+        <a href="index.html#about">Кто мы</a>
+        <a href="index.html#how">Путь отходов</a>
+        <a href="index.html#partners">Партнёрство</a>
+        <a href="index.html#contacts">Контакты</a>
+      </nav>
+      <a class="btn btn-primary btn-sm btn-nav" href="#quiz">Пройти квиз</a>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Главная</a>
+    <a href="#rules">Три действия</a>
+    <a href="#fractions">Что отбираем</a>
+    <a href="#special">Отдельное обращение</a>
+    <a href="#quiz">Квиз</a>
+    <a href="#memo">Памятка</a>
+    <div class="mm-foot">
+      <a href="tel:+74742261561">+7 (4742) 261-561</a>
+      <a href="mailto:info@ccg48.ru">info@ccg48.ru</a>
+      <div class="social" style="margin-top:8px"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+    </div>
+  </div>
+
+  <div class="container crumbs"><a href="index.html">Главная</a> / Как обращаться с отходами</div>
+
+  <!-- ======== HERO ======== -->
+  <section class="section" style="padding-top:48px; padding-bottom:40px">
+    <div class="pattern-side" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <div class="kicker">Гид по обращению с отходами</div>
+        <h1>Всё начинается ещё дома</h1>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Раздельных контейнеров у нас пока нет: весь поток поступает на территорию Экотехнопарка вместе. На заводе мы сортируем их и отделяем полезные материалы.</p>
+        <p class="lead">Но то, в каком состоянии упаковка попадает в контейнер, тоже имеет значение. Несколько простых действий дома помогают ей лучше пройти сортировку, а некоторым материалам — стать ресурсом.</p>
+        <div class="mascot-line mascot-plain mascot-light">
+          <div class="mascot-disc"><img src="assets/dog/point.webp" alt="Техногрунт" width="512" height="512"></div>
+          <p><b>Гав! Я Техногрунт.</b> Живу здесь и знаю, что происходит с отходами после контейнера. Сейчас покажу, что можно сделать ещё дома, а что дальше делаем уже мы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ТРИ ПРАВИЛА ======== -->
+  <section class="section alt" id="rules" style="padding-top:64px">
+    <div class="container">
+      <h2 class="reveal" style="margin-bottom:32px">Начни с трёх простых действий</h2>
+      <div class="rules reveal-group">
+        <div class="rule-card"><div class="num">1</div><h3>Вылей</h3><p>Освободи упаковку от воды, молока, масла и другой жидкости. Остатки могут загрязнить соседние отходы и испортить материалы, которые ещё можно отправить на переработку.</p></div>
+        <div class="rule-card"><div class="num">2</div><h3>Раздели</h3><p>Открути крышку с бутылки, сними пульверизатор с флакона. Если детали сделаны из разных материалов, заранее раздели их. Так на линии их можно будет сортировать отдельно.</p></div>
+        <div class="rule-card"><div class="num">3</div><h3>Сомни и не завязывай</h3><p>Сомни пластиковую бутылку, чтобы она занимала меньше места и удобнее проходила дальнейшую сортировку. Пакет с отходами оставь открытым, так его содержимое проще освободить на линии.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ПОЧЕМУ ======== -->
+  <section class="section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="circle reveal from-left"><img src="assets/photos/plastic-waste.jpg" srcset="assets/photos/plastic-waste-720.jpg 720w, assets/photos/plastic-waste.jpg 1280w" sizes="(max-width: 900px) 70vw, 420px" alt="Смятая пластиковая бутылка среди вторсырья"></div>
+        <div class="reveal" style="--i:1">
+          <div class="kicker">От дома до сортировочной линии</div>
+          <h2>Что меняет одна подготовленная бутылка</h2>
+          <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="lead">На сортировочной линии через общий поток проходят тысячи упаковок. Чем лучше материал подготовлен заранее, тем проще его распознать, отделить и направить дальше.</p>
+          <ul>
+            <li>Пустая бутылка не загрязняет соседние материалы.</li>
+            <li>Бутылка без крышки уже разделена на разные виды пластика.</li>
+            <li>Смятая бутылка занимает меньше места и удобнее проходит следующие этапы сортировки.</li>
+          </ul>
+          <p class="lead" style="margin-top:20px">То, что можно сделать дома за несколько секунд, облегчает дальнейшую сортировку на линии.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ФРАКЦИИ ======== -->
+  <section class="section alt" id="fractions">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Что происходит дальше</div>
+        <h2>Какие материалы мы отбираем</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">В Экотехнопарке общий поток проходит несколько этапов сортировки. Оборудование и сотрудники линии помогают отделить материалы, которые можно подготовить к дальнейшей переработке.</p>
+      </div>
+      <div class="fractions reveal-group">
+        <div class="fraction">
+          <div class="fraction-head"><div class="cut-disc"><img src="assets/cutouts/partner-pet.webp" alt="" loading="lazy"></div><h3>Пластик <span class="tag">отбираем</span></h3></div>
+          <p>Отбираем ПЭТ, ПНД, ПВД, полистирол, АБС, пакеты и плёнку.</p>
+          <div class="yes-no">
+            <ul class="yes"><li>Бутылки — пустые, смятые, без крышки</li><li>Флаконы — без пульверизатора</li><li>Пакеты и плёнку — без содержимого</li></ul>
+            <ul class="no"><li>Остатки жидкости внутри</li><li>Упаковка, внутри которой остаются другие отходы</li></ul>
+          </div>
+        </div>
+        <div class="fraction">
+          <div class="fraction-head"><div class="cut-disc"><img src="assets/cutouts/partner-glass.webp" alt="" loading="lazy"></div><h3>Стекло <span class="tag">отбираем</span></h3></div>
+          <p>Отбираем стеклянные бутылки, банки, флаконы и другой стеклобой.</p>
+          <div class="yes-no">
+            <ul class="yes"><li>Можно оставить с этикеткой</li><li>Вылить жидкость и вынуть пробку</li></ul>
+            <ul class="no"><li>Специально разбивать стекло не нужно</li><li>Оконное стекло, зеркала, посуда</li></ul>
+          </div>
+          <p class="fraction-note">Целое стекло безопаснее для сотрудников сортировочной линии и удобнее для дальнейшей сортировки.</p>
+        </div>
+        <div class="fraction">
+          <div class="fraction-head"><div class="cut-disc"><img src="assets/cutouts/partner-can.webp" alt="" loading="lazy"></div><h3>Алюминиевые и консервные банки <span class="tag">отбираем</span></h3></div>
+          <div class="yes-no">
+            <ul class="yes"><li>Освободить банку от содержимого</li><li>Смять банку из-под напитка</li></ul>
+            <ul class="no"><li>Не заворачивать банку в отдельный пакет</li></ul>
+          </div>
+          <p class="fraction-note">Так банку проще увидеть и отобрать из общего потока.</p>
+        </div>
+        <div class="fraction">
+          <div class="fraction-head"><div class="icon-disc"><svg class="icon"><use href="#i-file"/></svg></div><h3>Картон, бумага и тетрапак <span class="tag">отбираем</span></h3></div>
+          <p>Картон, макулатуру и тетрапак линия отделяет от общего потока и передаёт на дальнейшую переработку. Приносить их отдельно не нужно.</p>
+          <div class="yes-no">
+            <ul class="yes"><li>Тетрапак — освободить от содержимого</li><li>Сложенные коробки без скотча</li></ul>
+            <ul class="no"><li>Бумага с остатками еды и жидкости</li><li>Мокрая и жирная бумага</li></ul>
+          </div>
+          <p class="fraction-note">Мокрую и жирную бумагу значительно сложнее вернуть в переработку.</p>
+        </div>
+        <div class="fraction">
+          <div class="fraction-head"><div class="icon-disc"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Органические отходы <span class="tag">отбираем</span></h3></div>
+          <p>Остатки еды и другие органические отходы можно отправлять в обычный контейнер. В Экотехнопарке органическую фракцию отделяют от общего потока и направляют на дальнейшую утилизацию: 35–40% потока идёт на компостирование.</p>
+          <p class="fraction-note">При этом лучше по возможности сокращать количество пищевых отходов: планировать покупки, использовать продукты полностью и не покупать больше, чем успеешь съесть.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== ОТДЕЛЬНОЕ ОБРАЩЕНИЕ ======== -->
+  <section class="section" id="special">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Не всё идёт в обычный контейнер</div>
+        <h2>Для некоторых отходов нужны другие решения</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Не каждый предмет должен попадать в общий поток. Для опасных, крупногабаритных и некоторых специальных видов отходов предусмотрены отдельные способы обращения.</p>
+      </div>
+      <ul class="special-list reveal-group">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-battery"/></svg>Батарейки</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-battery"/></svg>Аккумуляторы</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-glass"/></svg>Шины</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Строительные отходы</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>Ветки</li>
+      </ul>
+      <div class="process-foot reveal">
+        <a class="btn btn-primary" href="index.html#search">Куда это выбросить?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== КАСТРЮЛИ И ОДЕЖДА ======== -->
+  <section class="section alt">
+    <div class="container">
+      <div class="two-notes">
+        <div class="rule-card reveal" style="--i:0">
+          <h3>А что с кастрюлями и сковородками?</h3>
+          <p>Экотехнопарк не принимает их как отдельное вторсырьё. Старую кастрюлю или сковородку можно отправить в обычный контейнер без дополнительной упаковки. Дальше они проходят через общий поток.</p>
+        </div>
+        <div class="rule-card reveal" style="--i:1">
+          <h3>Одежде лучше дать ещё одну жизнь</h3>
+          <p>Если вещь ещё пригодна для использования, лучше передать её дальше: в благотворительный проект, пункт сбора вещей или тому, кому она нужна.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== КОРОТКИЙ ИТОГ ======== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Не нужно разбираться во всех видах пластика</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Для начала достаточно нескольких привычек:</p>
+      </div>
+      <ul class="summary-list reveal-group">
+        <li>вылить содержимое</li>
+        <li>разделить детали из разных материалов</li>
+        <li>смять бутылку</li>
+        <li>не завязывать пакет</li>
+        <li>не отправлять опасные отходы в обычный контейнер</li>
+      </ul>
+      <p class="lead reveal" style="margin-top:24px; max-width:70ch">А дальше поток поступает к нам: мы разделяем его на линии, отбираем полезные материалы и готовим их к дальнейшей переработке.</p>
+    </div>
+  </section>
+
+  <!-- ======== КВИЗ ======== -->
+  <section class="section tint" id="quiz">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Проверим?</div>
+        <h2>А ты правильно обращаешься с отходами?</h2>
+        <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="lead">Техногрунт подготовил 10 вопросов о привычках, которые начинаются ещё дома. Ошибиться можно. Для этого он здесь и сидит.</p>
+      </div>
+      <div class="quiz-layout reveal-group">
+        <div class="quiz-box" id="quizBox"></div>
+        <aside class="dog-panel" aria-live="polite">
+          <div class="dog-stage">
+            <div class="dog-figure" id="dogFigure"><span class="dog-glow" aria-hidden="true"></span><img id="dogImg" src="assets/dog/neutral.webp" alt="Техногрунт — пёс-проводник по заводу" width="512" height="512"></div>
+            <div class="dog-mood" id="dogMood">готов проверять</div>
+            <div class="dog-bubble" id="dogBubble">Гав! Я свои правила знаю. А ты? Пройди квиз и проверь себя.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ПАМЯТКА ======== -->
+  <section class="section" id="memo" style="padding-top:0">
+    <div class="container">
+      <div class="memo-band reveal">
+        <div class="pattern-dark" aria-hidden="true"></div>
+        <div class="container-inner">
+          <h2>Памятка на холодильник</h2>
+          <p>10 главных правил на одном листе А4. Можно сохранить, распечатать и больше не вспоминать каждый раз, куда деть крышку или зачем сминать бутылку.</p>
+        </div>
+        <div class="memo-cover reveal from-right" style="--i:1"><img src="assets/cutouts/memo-cover.jpg" alt="Подготовленное вторсырьё на памятке" loading="lazy"></div>
+        <a class="btn btn-white" href="memo.html" id="memoBtn" style="position:relative"><svg class="icon"><use href="#i-file"/></svg> Открыть памятку</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="pattern-dark" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding:0">
+        <span>© 2026 ООО «СтройСельхозГарант» · Собираем. Сортируем. Группируем.</span>
+        <a href="index.html" style="display:inline">На главную</a><a href="#fractions" style="display:inline; margin-left:20px">Как обращаться с отходами</a><a href="memo.html" style="display:inline; margin-left:20px">Памятка</a><a href="#quiz" style="display:inline; margin-left:20px">Квиз</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="dog-widget" id="dogWidget">
+    <div class="dog-widget-bubble" id="dogWidgetBubble" role="status">
+      <button class="dog-widget-close" id="dogClose" type="button" aria-label="Закрыть">×</button>
+      <b>Гав! Запутался?</b> Загляни в <a href="#memo">памятку</a>. А если уверен, что всё знаешь, встречаемся в <a href="#quiz">квизе</a>.
+    </div>
+    <button class="dog-widget-btn has-clip" id="dogBtn" type="button" aria-label="Техногрунт"><img src="assets/dog/face.webp" alt="" width="512" height="512"><video src="assets/dog/face.mp4" autoplay loop muted playsinline preload="metadata"></video></button>
+  </div>
+
+  <script>
+    // ---- Мобильное меню
+    var burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      mm.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+    }
+    burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+    mm.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+    // ===== КВИЗ =====
+    // right — верный вариант; ok — что говорит Техногрунт при верном ответе; no — при ошибке (поправляет)
+
+    var QUESTIONS = [
+      { q: 'Допиваешь воду. Что сделать с бутылкой перед тем, как выбросить?',
+        options: ['Закрутить крышку, чтобы не пахло', 'Открутить крышку, вылить остатки и смять', 'Бросить как есть'],
+        right: 1,
+        ok: 'Верно. Пустая смятая бутылка без крышки занимает меньше места и удобнее проходит дальнейшую сортировку.',
+        no: 'Неверно. Закрученная бутылка с остатками жидкости может испортить соседние материалы. Открути крышку, вылей остатки и сомни бутылку.' },
+      { q: 'Пакет с отходами полный. Завязывать?',
+        options: ['Завязать потуже', 'Оставить открытым или развязать', 'Завязать двойным узлом и положить в ещё один пакет'],
+        right: 1,
+        ok: 'Правильно. Открытый пакет проще освободить на сортировочной линии.',
+        no: 'Неверно. Плотно завязанный пакет сложнее раскрыть на линии. Оставь его открытым или развяжи перед баком.' },
+      { q: 'Прохудилась старая сковородка. Куда её?',
+        options: ['В обычный контейнер вместе с другими отходами', 'Оставить рядом с контейнером', 'Отвезти на завод отдельно'],
+        right: 0,
+        ok: 'Да. Старая кастрюля или сковородка не требует отдельной упаковки: её можно отправить в обычный контейнер.',
+        no: 'Неверно. Отдельная упаковка и отдельная поездка не нужны, а вещи рядом с баком мусоровоз не заберёт. Сковородке место в обычном контейнере.' },
+      { q: 'Стеклянная бутылка. Разбить, чтобы занимала меньше места?',
+        options: ['Разбить — так компактнее', 'Не разбивать, выбросить целой', 'Разбить и завернуть в газету'],
+        right: 1,
+        ok: 'Верно. Целое стекло безопаснее для сотрудников сортировочной линии и удобнее в дальнейшей сортировке.',
+        no: 'Неверно. Специально разбивать стекло не нужно: осколки опаснее для людей и сложнее в сортировке. Выбрасывай бутылку целой.' },
+      { q: 'Разрядились батарейки от пульта. Куда их?',
+        options: ['В мусорное ведро', 'В отсек для крупногабаритных отходов', 'В специальный контейнер для батареек'],
+        right: 2,
+        ok: 'Точно. Батарейки содержат токсичные вещества, поэтому их сдают отдельно: такие контейнеры есть в школах, магазинах и торговых центрах.',
+        no: 'Неверно. Батарейки содержат токсичные вещества, в обычный контейнер их бросать нельзя. Копи дома и сдавай в специальный контейнер для батареек.' },
+      { q: 'Флакон из-под средства для стёкол опустел. Что с ним?',
+        options: ['Выбросить целиком с пульверизатором', 'Снять пульверизатор, вылить остатки, потом выбросить', 'Долить воды и выбросить'],
+        right: 1,
+        ok: 'Так и есть. Внутри механизма есть металлическая пружинка, поэтому пульверизатор и флакон важно разделить заранее.',
+        no: 'Неверно. Пульверизатор и флакон сделаны из разных материалов, внутри механизма есть металлическая пружинка. Сними распылитель, вылей остатки — и только потом в бак.' },
+      { q: 'Кофе с собой в бумажном стаканчике. Куда его после?',
+        options: ['В макулатуру, он же бумажный', 'В обычный контейнер, а на каждый день завести многоразовую кружку', 'В контейнер для пластика'],
+        right: 1,
+        ok: 'Верно. Внутри стаканчика есть защитное покрытие, поэтому вместе с обычной макулатурой его не перерабатывают. Выручает многоразовая кружка.',
+        no: 'Неверно. Бумажный стаканчик только выглядит бумажным: внутри защитное покрытие, и в макулатуру он не годится. Лучшее решение на каждый день — многоразовая кружка.' },
+      { q: 'Выбрасываешь консервные банки. Заворачивать их в отдельный пакет от запаха?',
+        options: ['Обязательно завернуть', 'Не заворачивать, так их проще отобрать', 'Завернуть и завязать потуже'],
+        right: 1,
+        ok: 'Верно. Многие заворачивают банки, чтобы не пахло, но так их сложнее заметить и отобрать на линии.',
+        no: 'Неверно. Не заворачивай консервные банки в дополнительный пакет: без него их проще заметить и отобрать на линии.' },
+      { q: 'Выбрасываешь старое кресло. Куда его?',
+        options: ['В обычный контейнер, разломав на части', 'В отдельный отсек для крупногабаритных отходов', 'Оставить у подъезда'],
+        right: 1,
+        ok: 'Верно. Для старой мебели и других крупных предметов на контейнерной площадке есть отдельные отсеки.',
+        no: 'Неверно. Старая мебель и другие крупные предметы не должны попадать в обычный контейнер: для них на площадке предусмотрены отдельные отсеки.' },
+      { q: 'В упаковке остались молоко, масло, вода или бытовая химия. Что сделать перед выбросом?',
+        options: ['Вылить любую жидкость до того, как выбросить упаковку', 'Оставить жидкость внутри, чтобы упаковка не мялась', 'Закрутить упаковку плотнее и выбросить'],
+        right: 0,
+        ok: 'Точно. Освободи упаковку от жидкости заранее — молока, масла, воды или бытовой химии.',
+        no: 'Неверно. Остатки жидкости могут загрязнить соседние отходы и испортить материалы, которые ещё можно отправить на переработку. Вылей содержимое до того, как выбросишь упаковку.' }
+    ];
+    var LETTERS = ['А', 'Б', 'В'];
+    function enter(el) { if (window.ssgMotion) ssgMotion.enter(el); }
+    function showQuizTop() {
+      var html = document.documentElement, previous = html.style.scrollBehavior;
+      html.style.scrollBehavior = 'auto';
+      box.closest('.quiz-layout').scrollIntoView({ block: 'start' });
+      html.style.scrollBehavior = previous;
+    }
+    var box = document.getElementById('quizBox');
+    var dogFigure = document.getElementById('dogFigure'), dogMood = document.getElementById('dogMood'), dogBubble = document.getElementById('dogBubble');
+    var current = 0, score = 0, answered = false, wrongList = [];
+
+    var DOG_ART = { happy: 'happy', cheer: 'cheer', sad: 'sad', '': 'neutral' };
+    // Ролики по настроению. Грустный — новый, в полный рост (Seedance 1.5, 30.10.2026):
+    // старый был снят по пояс, а без круга это было видно.
+    var DOG_CLIP = { happy: 'happy', cheer: 'cheer', sad: 'sad', '': 'idle-a' };
+
+    // Пёс в полный рост, без круга. У роликов ровный мятный фон #E0EDEC — шейдер вырезает его
+    // и рисует пса в canvas. Нет WebGL, «меньше движения» в системе или ролик не грузится —
+    // остаётся картинка #dogImg (поза без фона), она же видна, пока не пришёл первый кадр.
+    var dogLive = (function () {
+      var fig = document.getElementById('dogFigure');
+      if (!fig || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return null;
+      var vid = document.createElement('video'), cv = document.createElement('canvas'), gl = null;
+      if (!vid.canPlayType || !vid.canPlayType('video/mp4')) return null;
+      try { gl = cv.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false }); } catch (e) { gl = null; }
+      if (!gl) return null;
+      var VS = 'attribute vec2 p; varying vec2 uv; void main(){ uv = vec2((p.x + 1.0) * 0.5, 1.0 - (p.y + 1.0) * 0.5); gl_Position = vec4(p, 0.0, 1.0); }';
+      // Внутри фигуры альфа 1. У края — проекция на оси «фон → чёрный» и «фон → белый»,
+      // иначе по контуру чёрной шерсти остаётся светлый мятный ободок.
+      var FS = [
+        'precision mediump float;',
+        'uniform sampler2D t; uniform vec3 bg; uniform vec2 px; varying vec2 uv;',
+        'float dd(vec2 o){ return distance(texture2D(t, uv + o * px).rgb, bg) * 255.0; }',
+        'void main(){',
+        '  vec3 c = texture2D(t, uv).rgb;',
+        '  float d = distance(c, bg) * 255.0;',
+        '  float m = min(min(min(dd(vec2(2.0, 0.0)), dd(vec2(-2.0, 0.0))), min(dd(vec2(0.0, 2.0)), dd(vec2(0.0, -2.0)))), d);',
+        '  vec3 vb = vec3(0.11) - bg, vw = vec3(1.0) - bg;',
+        '  float ae = max(clamp(dot(c - bg, vb) / dot(vb, vb), 0.0, 1.0), clamp(dot(c - bg, vw) / dot(vw, vw), 0.0, 1.0));',
+        '  float a = m > 34.0 ? 1.0 : (d > 34.0 ? ae : min(clamp((d - 12.0) / 22.0, 0.0, 1.0), ae));',
+        '  gl_FragColor = vec4(clamp((c - (1.0 - a) * bg) / max(a, 0.002), 0.0, 1.0) * a, a);',
+        '}'].join('\n');
+      try {
+        var pr = gl.createProgram();
+        [[gl.VERTEX_SHADER, VS], [gl.FRAGMENT_SHADER, FS]].forEach(function (s) {
+          var o = gl.createShader(s[0]); gl.shaderSource(o, s[1]); gl.compileShader(o);
+          if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o));
+          gl.attachShader(pr, o);
+        });
+        gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) throw new Error('link');
+        gl.useProgram(pr);
+        gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+        var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+        gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+        [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]
+          .forEach(function (q) { gl.texParameteri(gl.TEXTURE_2D, q[0], q[1]); });
+        gl.uniform3f(gl.getUniformLocation(pr, 'bg'), 224 / 255, 237 / 255, 236 / 255);
+        gl.uniform2f(gl.getUniformLocation(pr, 'px'), 1 / 512, 1 / 512);
+        gl.uniform1i(gl.getUniformLocation(pr, 't'), 0);
+        gl.clearColor(0, 0, 0, 0);
+      } catch (e) { return null; }
+
+      vid.className = 'dog-src';
+      vid.muted = true; vid.defaultMuted = true; vid.loop = true; vid.playsInline = true; vid.preload = 'auto';
+      vid.setAttribute('muted', ''); vid.setAttribute('playsinline', ''); vid.setAttribute('aria-hidden', 'true');
+      cv.className = 'dog-cv'; cv.setAttribute('aria-hidden', 'true');
+      fig.appendChild(cv); fig.appendChild(vid);
+
+      var dead = false, want = null, fresh = false, onScreen = true;
+      function fail() { dead = true; fig.classList.remove('is-live', 'is-still'); try { vid.pause(); vid.removeAttribute('src'); vid.load(); } catch (e) {} }
+      function draw() {
+        if (dead || !want || vid.readyState < 2) return;
+        try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, vid); } catch (e) { fail(); return; }
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        if (!fig.classList.contains('is-live')) fig.classList.add('is-live');
+        if (fresh) { fresh = false; fig.classList.remove('is-still'); }  // новый ролик пошёл — убираем позу
+      }
+      function size() {
+        var dpr = Math.min(2, window.devicePixelRatio || 1), r = fig.getBoundingClientRect();
+        var w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+        if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); draw(); }
+      }
+      function run() {
+        if (dead) return;
+        if (!want || !onScreen) { vid.pause(); return; }
+        var p = vid.play(); if (p && p.catch) p.catch(function () {});
+      }
+      if (vid.requestVideoFrameCallback) (function tick() { vid.requestVideoFrameCallback(function () { draw(); tick(); }); })();
+      else (function loop() { if (dead) return; if (!vid.paused) draw(); requestAnimationFrame(loop); })();
+      vid.addEventListener('loadeddata', draw);
+      vid.addEventListener('error', fail);
+      cv.addEventListener('webglcontextlost', function (e) { e.preventDefault(); fail(); });
+      if (window.ResizeObserver) new ResizeObserver(size).observe(fig); else window.addEventListener('resize', size);
+      size();
+      // за пределами экрана ролик стоит на паузе — не тратим батарею
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; run(); }, { rootMargin: '150px' }).observe(fig);
+      return {
+        show: function (name) {
+          if (dead) return;
+          want = name || null;
+          if (!want) { fig.classList.add('is-still'); vid.pause(); return; }
+          var src = 'assets/dog/' + want + '.mp4';
+          if (vid.getAttribute('src') !== src) { fresh = true; fig.classList.add('is-still'); vid.setAttribute('src', src); }
+          else if (fig.classList.contains('is-still')) { fresh = true; }
+          run();
+        }
+      };
+    })();
+    if (dogLive) dogLive.show('idle-a');
+    function dogSay(text, mood) {
+      dogBubble.className = 'dog-bubble' + (mood === 'sad' ? ' is-wrong' : '');
+      dogBubble.innerHTML = text;
+      void dogBubble.offsetWidth; dogBubble.classList.add('fade-in');
+      var keep = (dogFigure.classList.contains('is-live') ? ' is-live' : '') + (dogFigure.classList.contains('is-still') ? ' is-still' : '');
+      dogFigure.className = 'dog-figure' + keep + (mood === 'happy' || mood === 'cheer' ? ' is-happy' : mood === 'sad' ? ' is-sad' : '');
+      var art = document.getElementById('dogImg');
+      if (art) {
+        var src = 'assets/dog/' + (DOG_ART[mood] || 'neutral') + '.webp';
+        if (window.ssgMotion && ssgMotion.swapImage) ssgMotion.swapImage(art, src);
+        else art.src = src;
+      }
+      if (dogLive) dogLive.show(mood in DOG_CLIP ? DOG_CLIP[mood] : 'idle-a');
+      dogMood.textContent = mood === 'happy' ? 'доволен' : mood === 'cheer' ? 'ликует' : mood === 'sad' ? 'поправляет' : 'готов проверять';
+    }
+
+    function bar() {
+      var html = '<div class="quiz-bar" aria-hidden="true">';
+      for (var i = 0; i < QUESTIONS.length; i++) html += '<span class="' + (i < current ? 'done' : i === current ? 'cur' : '') + '"></span>';
+      return html + '</div>';
+    }
+
+    function renderQuestion() {
+      answered = false;
+      var item = QUESTIONS[current];
+      var html = '<div class="quiz-top"><span>Вопрос ' + (current + 1) + ' из ' + QUESTIONS.length + '</span><span>верных: ' + score + '</span></div>' + bar() +
+                 '<div class="quiz-q">' + item.q + '</div><div class="quiz-options">';
+      item.options.forEach(function (opt, i) {
+        html += '<button class="quiz-option" type="button" data-i="' + i + '" style="--i:' + i + '"><span class="letter">' + LETTERS[i] + '</span><span>' + opt + '</span></button>';
+      });
+      html += '</div><div id="quizNextWrap"></div>';
+      box.innerHTML = html;
+      enter(box);
+      if (current === 0) dogSay('Гав! Я свои правила знаю. А ты? Пройди квиз и проверь себя.', '');
+      else dogSay('Следующий. Не торопись, подумай спокойно.', '');
+    }
+
+    function renderResult() {
+      var n = QUESTIONS.length, say, mood = score === n ? 'cheer' : 'happy';
+      if (score === n) say = '<b>Все десять.</b> С отходами ты обращаешься лучше многих. Забирай памятку и научи соседа.';
+      else if (score >= n - 2) say = '<b>Почти без ошибок.</b> Пара мелочей — и привычки будут работать на полную.';
+      else if (score >= n / 2) { say = '<b>Половина правил уже твоя.</b> Остальное подскажет памятка на холодильник.'; mood = ''; }
+      else { say = '<b>Есть куда расти.</b> Держи памятку на холодильник — через неделю пройдёшь на отлично.'; mood = 'sad'; }
+      var recap = '';
+      if (wrongList.length) {
+        recap = '<div style="margin-top:22px; padding-top:18px; border-top:1px solid var(--grey-200)"><div class="kicker">Что стоит запомнить</div><ul style="list-style:none; display:grid; gap:10px">';
+        wrongList.forEach(function (i) { recap += '<li style="padding-left:20px; position:relative; color:var(--ink-600); font-size:15px"><span style="position:absolute; left:0; color:var(--orange-500)">–</span>' + QUESTIONS[i].no.replace(/^Неверно\.\s*/, '') + '</li>'; });
+        recap += '</ul></div>';
+      }
+      var url = encodeURIComponent(location.href.split('#')[0] + '#quiz');
+      var text = encodeURIComponent('Я прошёл квиз Техногрунта: ' + score + ' из ' + n + '. А ты правильно обращаешься с отходами?');
+      box.innerHTML = '<div class="quiz-top"><span>Результат</span><span>верных: ' + score + '</span></div>' + bar() +
+        '<div class="quiz-q">Правильных ответов: <span data-count="' + score + '">' + score + '</span> из ' + n + '</div>' + recap +
+        '<div class="quiz-next">' +
+        '<a class="btn btn-primary" href="#memo"><svg class="icon"><use href="#i-file"/></svg> Скачать памятку</a>' +
+        '<button class="btn btn-secondary" type="button" id="quizRestart">Пройти заново</button>' +
+        '<a class="btn btn-secondary" target="_blank" rel="noopener" href="https://vk.com/share.php?url=' + url + '&title=' + text + '">Поделиться в VK</a>' +
+        '<a class="btn btn-secondary" target="_blank" rel="noopener" href="https://t.me/share/url?url=' + url + '&text=' + text + '">В Telegram</a></div>';
+      enter(box);
+      if (window.ssgMotion) ssgMotion.count(box);
+      dogSay(say, mood);
+      document.getElementById('quizRestart').addEventListener('click', function () { current = 0; score = 0; wrongList = []; renderQuestion(); showQuizTop(); });
+    }
+
+    box.addEventListener('click', function (e) {
+      var btn = e.target.closest('.quiz-option');
+      if (!btn || answered) return;
+      answered = true;
+      var item = QUESTIONS[current], picked = Number(btn.dataset.i), isRight = picked === item.right;
+      if (isRight) score++; else wrongList.push(current);
+      box.querySelectorAll('.quiz-option').forEach(function (b, i) {
+        b.disabled = true;
+        if (i === item.right) b.classList.add('right');
+        else if (i === picked) b.classList.add('wrong');
+      });
+      box.querySelector('.quiz-top span:last-child').textContent = 'верных: ' + score;
+      dogSay(isRight ? '<b>Верно.</b> ' + item.ok.replace(/^Верно\.\s*|^Правильно\.\s*|^Да\.\s*|^Точно\.\s*|^Так и есть\.\s*|^Увы, да\.\s*/, '') : '<b>Неверно.</b> ' + item.no.replace(/^Неверно\.\s*/, ''), isRight ? 'happy' : 'sad');
+      var last = current === QUESTIONS.length - 1;
+      document.getElementById('quizNextWrap').innerHTML = '<div class="quiz-next fade-in"><button class="btn btn-primary" type="button" id="quizNext">' + (last ? 'Показать результат' : 'Следующий вопрос') + ' <svg class="icon"><use href="#i-arrow"/></svg></button></div>';
+      document.getElementById('quizNext').addEventListener('click', function () { if (last) renderResult(); else { current++; renderQuestion(); } showQuizTop(); });
+    });
+
+    renderQuestion();
+
+    // ---- Виджет Техногрунта
+    var wb = document.getElementById('dogWidgetBubble');
+    document.getElementById('dogClose').addEventListener('click', function () { wb.classList.remove('show'); });
+    document.getElementById('dogBtn').addEventListener('click', function () { wb.classList.toggle('show'); });
+  </script>
+  <script src="motion.js" defer></script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="motion-max.js" defer></script>
+
+</body>
+</html>

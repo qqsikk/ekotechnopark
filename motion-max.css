@@ -1,0 +1,137 @@
+/* ============================================================
+   motion-max.css — ветка motion-max: полный моушн поверх motion.css.
+   Здесь движение выходит за правила дизайн-системы (по решению
+   заказчика): видеофон, бегущая строка, покадровая сцена «Сомни
+   бутылку», плавающие круги, 3D-наклон карточек, частицы, курсор.
+   Цвета, шрифты и круги остаются фирменными.
+   ============================================================ */
+
+html, body { overflow-x: clip; }
+.tilt { transform-style: preserve-3d; will-change: transform; }
+
+/* ---------- Прогресс скролла ---------- */
+.scroll-progress { position: fixed; left: 0; top: 0; height: 3px; width: 100%; background: var(--teal-500); transform-origin: 0 50%; transform: scaleX(0); z-index: 60; pointer-events: none; }
+
+/* ---------- Интро (раз за сессию) ---------- */
+.intro-screen { display: none; position: fixed; inset: 0; z-index: 100; background: var(--green-900); color: var(--white); align-items: center; justify-content: center; }
+html.intro .intro-screen { display: flex; }
+.intro-words { font-size: clamp(40px, 7vw, 96px); font-weight: 700; line-height: 1.02; text-align: left; }
+.intro-words span { display: block; opacity: 0; transform: translateY(30px); }
+.intro-words span:nth-child(2) { color: var(--teal-500); }
+html.intro .hero-photo, html.intro .hero-video, html.intro .hero-circle, html.intro .hero-ring, html.intro .hero-title .line > span,
+html.intro .hero-sub, html.intro .hero .seg-rule span, html.intro .hero-actions, html.intro .hero-meta { animation-play-state: paused; }
+
+/* ---------- Hero: видеофон, слои под параллакс ---------- */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; opacity: 0; transition: opacity 900ms var(--ease-std); pointer-events: none; }
+.hero-video.is-ready { opacity: 1; }
+.hero-shade { display: none; }
+@media (max-width: 600px) {
+  .hero-shade { display: block; position: absolute; inset: 0; background: rgba(16,74,71,.55); pointer-events: none; }
+}
+.hero-circle, .hero-ring, .hero .container, .hero-video, .hero-photo { will-change: transform; }
+
+/* ---------- Бегущая строка под hero ---------- */
+.marquee { background: var(--green-900); color: var(--white); overflow: hidden; padding: 15px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.marquee-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group { display: flex; }
+.marquee-item { display: flex; align-items: center; gap: 28px; padding-right: 28px; font-size: 14px; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; white-space: nowrap; color: rgba(255,255,255,.88); }
+.marquee-item::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--teal-500); flex: none; }
+.marquee-item.accent::after { background: var(--orange-500); }
+@keyframes marquee { to { transform: translateX(-25%); } }
+
+/* ---------- Сомни бутылку: пришпиленная покадровая сцена ---------- */
+.crush { background: var(--white); position: relative; overflow: hidden; }
+.crush-inner { min-height: 100svh; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-top: 88px; padding-bottom: 56px; }
+.crush-copy h2 { font-size: clamp(34px, 4.6vw, 60px); }
+.crush-copy .lead { margin-top: 18px; font-size: 17px; }
+.crush-steps { list-style: none; margin-top: 26px; display: grid; gap: 12px; max-width: 520px; }
+.crush-step { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 14px 16px; border-radius: var(--radius-card); border: 1px solid var(--grey-200); background: var(--white); opacity: .45; transition: opacity 300ms var(--ease-std), border-color 300ms var(--ease-std), background-color 300ms var(--ease-std), transform 300ms var(--ease-std); }
+.crush-step .n { font-size: 12px; color: var(--teal-500); letter-spacing: var(--tracking-caps); font-weight: 500; padding-top: 4px; }
+.crush-step b { display: block; font-weight: 500; color: var(--green-700); font-size: 18px; line-height: 1.25; }
+.crush-step p { font-size: 14px; color: var(--ink-600); margin-top: 3px; }
+.crush-step.is-on { opacity: 1; border-color: var(--teal-500); background: var(--teal-050); transform: translateX(8px); }
+.crush-step.is-done { opacity: .85; }
+.crush-step.is-done .n { color: var(--green-700); }
+.crush-final { margin-top: 22px; font-size: 18px; color: var(--ink-900); opacity: 0; transform: translateY(8px); transition: opacity 400ms var(--ease-std), transform 400ms var(--ease-std); max-width: 46ch; }
+.crush.is-complete .crush-final { opacity: 1; transform: none; }
+.crush-hint { margin-top: 20px; display: inline-flex; gap: 8px; align-items: center; font-size: 12px; color: var(--ink-600); letter-spacing: var(--tracking-caps); text-transform: uppercase; transition: opacity 300ms var(--ease-std); }
+.crush-hint .icon { width: 16px; height: 16px; animation: hint-bob 1.6s ease-in-out infinite; }
+.crush.is-complete .crush-hint { opacity: 0; }
+@keyframes hint-bob { 50% { transform: translateY(4px); } }
+.crush-stage { position: relative; width: min(100%, 540px); aspect-ratio: 1; margin: 0 auto; }
+.crush-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+.crush-ring .track { fill: none; stroke: var(--grey-200); stroke-width: 1; }
+.crush-ring .fill { fill: none; stroke: var(--teal-500); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 301.6; stroke-dashoffset: 301.6; }
+.crush-disc { position: absolute; inset: 5%; border-radius: 50%; overflow: hidden; background: var(--teal-100); }
+.crush-disc canvas { width: 100%; height: 100%; display: block; }
+.crush-badge { position: absolute; right: 0; bottom: 9%; min-width: 12em; text-align: center; background: var(--green-700); color: var(--white); border-radius: var(--radius-pill); padding: 10px 16px; font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; box-shadow: 0 8px 24px rgba(16,74,71,.18); white-space: nowrap; }
+.crush-badge b { font-weight: 500; color: var(--white); }
+@media (max-width: 900px) {
+  .crush-inner { grid-template-columns: 1fr; gap: 18px; padding-top: 76px; padding-bottom: 24px; align-content: center; }
+  .crush-stage { width: min(100%, 300px); order: -1; }
+  .crush-copy h2 { font-size: clamp(26px, 6.5vw, 34px); }
+  .crush-copy .lead { display: none; }
+  .crush-steps { gap: 8px; margin-top: 14px; }
+  .crush-step { padding: 10px 12px; transform: none; }
+  .crush-step.is-on { transform: none; }
+  .crush-step p { display: none; }
+  .crush-final { font-size: 15px; margin-top: 12px; }
+  .crush-hint { margin-top: 10px; }
+  .crush-badge { bottom: 4%; right: -4px; padding: 8px 12px; font-size: 12px; }
+}
+
+/* ---------- Плавающие круги на фонах (orbs) ---------- */
+.has-orbs { position: relative; overflow: hidden; }
+.has-orbs > .container { position: relative; z-index: 1; }
+.orbs { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.orb { position: absolute; border-radius: 50%; will-change: transform; }
+
+/* ---------- Лента привычек: пока едет сама, snap выключен ---------- */
+.habit-strip.auto { scroll-snap-type: none; }
+
+/* ---------- Кто мы: видео в круге, текст по словам ---------- */
+.circle-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about .w { display: inline-block; will-change: transform; }
+
+/* ---------- Путь пакета: конвейер из точек, медленный наезд на фото ---------- */
+.conveyor-dot { position: absolute; left: 0; top: 0; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; border-radius: 50%; background: var(--teal-500); opacity: .75; will-change: transform; }
+.pstep .circle img { transition: none; will-change: transform; }
+
+/* ---------- Показатели: кольцо-прогресс вместо статичного ---------- */
+.figure .disc::after { display: none; }
+.figure .disc .ring { position: absolute; inset: -12px; width: calc(100% + 24px); height: calc(100% + 24px); transform: rotate(-90deg); pointer-events: none; }
+.figure .disc .ring circle { fill: none; stroke: var(--teal-500); stroke-width: 1.5; stroke-linecap: round; }
+
+/* ---------- Партнёрство: холст под частицы ---------- */
+.trow { position: relative; }
+.trow canvas.fx { position: absolute; left: -40px; top: -60px; width: calc(100% + 80px); height: calc(100% + 100px); pointer-events: none; z-index: 2; }
+
+/* ---------- FAQ: раскрытием управляет GSAP ---------- */
+.faq details[open] > p { animation: none; }
+
+/* ---------- Техногрунт ---------- */
+.dog-widget-btn { will-change: transform; }
+.dog-figure { transition: background-color var(--dur-base) var(--ease-std); }
+.dog-figure img { will-change: transform, opacity; }
+
+/* ---------- Партнёры: карточка приподнимается под курсором ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .partner-card:hover { border-color: var(--teal-500); }
+}
+
+/* ---------- Курсор-кольцо (только мышь) ---------- */
+.cursor-ring { position: fixed; left: 0; top: 0; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; border: 1.5px solid var(--teal-500); pointer-events: none; z-index: 95; opacity: 0; transition: opacity 200ms var(--ease-std), background-color 200ms var(--ease-std); will-change: transform; }
+.cursor-ring.is-visible { opacity: 1; }
+.cursor-ring.is-hover { background: rgba(65,168,158,.16); }
+
+/* ---------- Холст для всплесков (квиз) ---------- */
+.fx-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 90; }
+
+/* ---------- Меньше движения ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .crush-hint .icon { animation: none; }
+  .hero-video { display: none; }
+  .cursor-ring { display: none; }
+}

@@ -1,0 +1,19 @@
+* text=auto
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.svg text eol=lf
+*.jpg binary
+*.png binary
+*.webp binary
+*.mp4 binary
+*.woff2 binary
+
+.htaccess text eol=lf
+.gitignore text eol=lf
+.vercelignore text eol=lf
+assets/vendor/*.js -whitespace
