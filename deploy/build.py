@@ -18,11 +18,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '_deploy', 'site')
 OLD_HOST = 'ekotechnopark.vercel.app'
 
-PAGES = ['index.html', 'sorting.html', 'memo.html', '404.html']
+PAGES = ['index.html', 'sorting.html', 'memo.html', 'glass-map.html', '404.html']
 STATIC = ['style.css', 'motion.css', 'motion-max.css', 'motion.js', 'motion-max.js', '.htaccess']
 DIRS = ['assets']
 VERSIONED = ['style.css', 'motion.css', 'motion-max.css', 'motion.js', 'motion-max.js']
-SITEMAP = ['', 'sorting.html', 'memo.html']
+SITEMAP = ['', 'sorting.html', 'memo.html', 'glass-map.html']
 
 
 def die(msg):

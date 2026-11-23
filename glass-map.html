@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карта «Колокольчиков» · Липецк</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5ed;--paper:#fffdf8;--ink:#1d2a26;--muted:#51645b;--green:#155749;--amber:#91541e;--border:#d7ded3;--soft:#eaf2ec}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Inter","Segoe UI",Arial,sans-serif}
+button,a{touch-action:manipulation}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--green);text-underline-offset:3px}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #21745a;outline-offset:3px}
+header,main,footer{max-width:1550px;margin:auto;padding-inline:clamp(16px,3.4vw,48px)}
+header{padding-top:24px;padding-bottom:20px;display:flex;justify-content:space-between;align-items:end;gap:16px}
+.city{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(29px,4.2vw,50px);line-height:1.06;letter-spacing:-.04em;margin:5px 0 8px}
+p{margin:0;color:var(--muted)}
+.download{font-weight:720;text-decoration:none;display:inline-flex;padding:10px 16px;align-items:center;justify-content:center;min-height:44px;white-space:nowrap;border-radius:9px;background:var(--green);color:white;flex:none}
+.download:hover{background:#0d463a}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,360px);gap:16px;align-items:start}
+.panel,.map{border:1px solid var(--border);border-radius:14px;background:var(--paper);overflow:hidden}
+.map{position:relative;background:#f0efe9}
+#map{display:block;width:100%;aspect-ratio:1100/790;touch-action:none;cursor:grab;user-select:none}
+#map.dragging{cursor:grabbing}
+.controls{position:absolute;top:12px;right:12px;display:flex;gap:6px;align-items:stretch}
+.controls button{min-width:42px;min-height:42px;border-radius:8px;border:1px solid var(--border);background:var(--paper);font-weight:700}
+.controls button.sign{font-size:23px;line-height:1}
+.controls button:hover{background:var(--soft)}
+.controls button:disabled{opacity:.5;cursor:default}
+.controls button.all{padding-inline:10px;font-size:13px}
+.north,.scale{position:absolute;pointer-events:none;background:var(--paper);border:1px solid var(--border);border-radius:8px;color:var(--ink)}
+.north{left:12px;top:12px;width:40px;text-align:center;font-size:11px;font-weight:800;padding:3px 0}
+.north svg{display:block;width:17px;height:20px;margin:0 auto 3px;fill:var(--green)}
+.scale{bottom:12px;left:12px;padding:4px 8px 7px;font-size:11px;font-weight:720}
+.scale span{display:block;height:6px;border:solid var(--green);border-width:0 2px 2px}
+.basemap-credit{position:absolute;right:9px;bottom:8px;background:#fffdf5e8;padding:1px 5px;border-radius:4px;font-size:10px}
+.marker{cursor:pointer;color:var(--green)}
+.marker.uncertain{color:var(--amber)}
+.marker .badge{fill:currentColor;stroke:var(--paper);stroke-width:2.5}
+.marker text{fill:white;pointer-events:none;font-weight:750;font-size:13px;text-anchor:middle;dominant-baseline:central}
+.marker line{stroke:currentColor;stroke-width:2.2}
+.marker .anchor{stroke:var(--paper);stroke-width:1.5;fill:currentColor}
+.marker.selected .badge,.marker:focus .badge{stroke:#ecd16c;stroke-width:4}
+.panel{padding:17px;display:flex;flex-direction:column;max-height:min(770px,calc(100dvh - 142px))}
+h2{font-size:18px;line-height:1.2;margin:0 0 10px;letter-spacing:-.02em}
+.selected-card{border-radius:10px;background:var(--soft);padding:12px;margin-bottom:13px}
+.selected-card h3{margin:0 0 2px;font-size:15px;line-height:1.4}
+.selected-card p{font-size:13px}
+.sources{margin:8px 0 0;padding:0;list-style:none;font-size:13px}
+.sources a{display:inline-block;padding:3px 0}
+.ordered{margin:0;padding:0 2px 0 0;list-style:none;overflow:auto;overscroll-behavior:contain;min-height:120px}
+.addr{display:flex;width:100%;align-items:center;gap:9px;background:none;text-align:left;border:0;border-bottom:1px solid #ebeee6;padding:8px 4px;border-radius:5px}
+.addr:hover,.addr[aria-pressed=true]{background:var(--soft)}
+.addr:focus-visible{outline-offset:-2px}
+.number{border-radius:100%;width:25px;height:25px;flex:none;display:grid;place-items:center;background:var(--green);color:white;font-size:12px;font-weight:800}
+.number.alt{background:var(--amber)}
+.addr strong{display:block;font-weight:620;font-size:14px}
+.addr small{display:block;font-size:11px;color:var(--muted)}
+footer{padding-top:12px;padding-bottom:22px;font-size:12px}
+@media(max-width:820px){
+ main{grid-template-columns:1fr}
+ .panel{max-height:none}
+ .ordered{min-height:0;overflow:visible}
+ header{align-items:start}
+}
+@media(max-width:490px){
+ header{display:block}
+ .download{margin-top:12px}
+ .controls{right:7px;top:7px}
+ .controls button{min-width:35px;min-height:36px}
+ .north{left:7px;top:7px;width:29px}
+ p,body{font-size:14px}
+ #map{aspect-ratio:1.13}
+}
+</style>
+</head>
+<body>
+<header>
+ <div>
+  <a href="index.html#glass">← Выбери предмет</a>
+  <div class="city">Липецк</div>
+  <h1>Карта «Колокольчиков»</h1>
+  <p>Адреса установки контейнеров для стекла</p>
+ </div>
+ <a class="download" href="assets/maps/glass-map-print.png" download="Lipetsk_Glass_Map.png">Скачать PNG</a>
+</header>
+<main>
+ <section class="map" aria-label="Интерактивная карта">
+  <svg id="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 790" role="group" aria-label="Карта Липецка с номерами из таблицы">
+   <image href="assets/maps/lipetsk-basemap.png" x="0" y="0" width="1100" height="790"></image>
+   <g id="markers"></g>
+  </svg>
+  <div class="north" aria-label="Север">С<svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1 3 20l7-5 7 5z"></path></svg></div>
+  <div class="controls" aria-label="Управление масштабом">
+   <button type="button" class="sign" id="plus" aria-label="Приблизить">+</button>
+   <button type="button" class="sign" id="minus" aria-label="Отдалить">−</button>
+   <button type="button" class="all" id="reset">Вся карта</button>
+  </div>
+  <div class="scale" id="scale"><div></div><span></span></div>
+  <a class="basemap-credit" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a>
+ </section>
+ <section class="panel" aria-label="Список адресов">
+  <h2>Адреса по порядку</h2>
+  <div class="selected-card" id="selected" aria-live="polite">
+   <p>Нажмите на номер или адрес, чтобы рассмотреть место на карте.</p>
+  </div>
+  <ol class="ordered" id="ordered"></ol>
+ </section>
+</main>
+<footer>
+ <p>Метки показывают здания и ориентир в сквере. Место контейнера во дворе может отличаться. Для № 4 показаны оба корпуса.</p>
+</footer>
+<noscript><p>Для интерактивной карты включите JavaScript. Изображение доступно по кнопке «Скачать PNG».</p></noscript>
+<script>
+"use strict";
+const {entries,width,height,scale} = {"entries": [{"id": 1, "address": "ул. И. В. Свиридова, 22, корп. 1", "note": "", "coords": [[39.5184383, 52.575854500000005]], "targets": [[254.04, 700.13]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834590747"]], "badge": [254.04, 700.13]}, {"id": 2, "address": "ул. А. Г. Стаханова, 73", "note": "", "coords": [[39.51378645, 52.573210700000004]], "targets": [[221.7, 730.38]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1218992581"]], "badge": [221.7, 730.38]}, {"id": 3, "address": "ул. Леонтия Кривенкова, 33", "note": "", "coords": [[39.50083015, 52.5809736]], "targets": [[131.6, 641.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1369915680"]], "badge": [131.6, 641.56]}, {"id": 4, "address": "Минская ул., 6А", "note": "В таблице корпус не указан. У адреса два корпуса ЖК «Геометрия». Оба показаны на карте.", "coords": [[39.50410935, 52.57545184999999], [39.5031995, 52.575889849999996]], "targets": [[154.4, 704.74], [148.08, 699.73]], "links": [["Корпус 1 на OpenStreetMap", "https://www.openstreetmap.org/way/367088359"], ["Корпус 2 на OpenStreetMap", "https://www.openstreetmap.org/way/1154915536"], ["Адреса от застройщика", "https://odsk-group.ru/projects-finished?city=43"]], "badge": [151.24, 735.24]}, {"id": 5, "address": "ул. А. Г. Стаханова, 2", "note": "", "coords": [[39.53509569605636, 52.596174]], "targets": [[369.87, 467.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17671521"]], "badge": [369.87, 467.58]}, {"id": 6, "address": "ул. А. Г. Стаханова, 59", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.51311669954184, 52.5800336]], "targets": [[217.04, 652.31]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17716748"]], "badge": [217.04, 652.31]}, {"id": 7, "address": "ул. С. С. Бехтеева, 9", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.5109229, 52.6021128]], "targets": [[201.78, 399.59]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17717199"]], "badge": [201.78, 399.59]}, {"id": 8, "address": "просп. 60 лет СССР, 41", "note": "В таблице указаны 3–4-й подъезды, ориентир — рынок «Спутник». Метка показывает здание.", "coords": [[39.5241638, 52.591031349999994]], "targets": [[293.86, 526.45]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93225649"]], "badge": [293.86, 526.45]}, {"id": 9, "address": "ул. С. Л. Шуминского, 6", "note": "", "coords": [[39.51840445, 52.58604135]], "targets": [[253.81, 583.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/180227662"]], "badge": [253.81, 583.56]}, {"id": 10, "address": "Учебный пер., 2", "note": "", "coords": [[39.520311500000005, 52.580544200000006]], "targets": [[267.07, 646.47]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/370488552"]], "badge": [267.07, 646.47]}, {"id": 11, "address": "Московская ул., 111", "note": "", "coords": [[39.51547975, 52.60059765]], "targets": [[233.47, 416.94]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93217052"]], "badge": [233.47, 416.94]}, {"id": 12, "address": "Московская ул., 61Г", "note": "", "coords": [[39.53280515, 52.61010675]], "targets": [[353.94, 308.06]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/86952848"]], "badge": [353.94, 308.06]}, {"id": 13, "address": "ул. Зои Космодемьянской, 2/1", "note": "", "coords": [[39.620914, 52.588061]], "targets": [[966.62, 560.44]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/6604559"], ["Адрес и метка на карте", "https://www.mirkvartir.ru/373478807/"]], "badge": [966.62, 560.44]}, {"id": 14, "address": "Ворошиловский сквер", "note": "Сквер у стадиона «Металлург». Ориентир в сквере — памятник Алексею Хренникову.", "coords": [[39.5896543, 52.6032955]], "targets": [[749.25, 386.05]], "links": [["Памятник в сквере на OpenStreetMap", "https://www.openstreetmap.org/node/13012010168"], ["Расположение сквера в постановлении администрации", "https://base.garant.ru/73226885/"]], "badge": [749.25, 386.05]}, {"id": 15, "address": "просп. 60 лет СССР, 16", "note": "", "coords": [[39.538114050000004, 52.586235450000004]], "targets": [[390.86, 581.34]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93182630"]], "badge": [390.86, 581.34]}, {"id": 16, "address": "Опытная ул., 17Б", "note": "", "coords": [[39.541049, 52.63179345]], "targets": [[411.27, 59.65]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834559682"]], "badge": [411.27, 59.65]}, {"id": 17, "address": "ул. Эдуарда Белана, 10", "note": "", "coords": [[39.51052755, 52.58278235]], "targets": [[199.03, 620.86]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/201095770"]], "badge": [199.03, 620.86]}, {"id": 18, "address": "ул. Водопьянова, 25", "note": "", "coords": [[39.53830445, 52.594164750000004]], "targets": [[392.18, 490.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93185145"]], "badge": [420.18, 490.58]}, {"id": 19, "address": "ул. Гагарина, 35", "note": "Ориентир из таблицы — магазин «Кристалл».", "coords": [[39.596004, 52.616996]], "targets": [[793.4, 229.16]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/147637522"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/Z0AYcw5mSUUDQFtofXpwd3VqYQ%3D%3D/"]], "badge": [793.4, 229.16]}, {"id": 20, "address": "пл. Победы, 3А", "note": "Ориентир из таблицы — Центральный рынок.", "coords": [[39.572612, 52.602609]], "targets": [[630.75, 393.91]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/13601965"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/ploshchad_pobedy_3a/Z0AYcwBiT0QFQFtofXpxc3pjbA%3D%3D/"]], "badge": [630.75, 393.91]}], "width": 1100, "height": 790, "scale": 102.85056374997312};
+const map = document.getElementById("map");
+const markers = document.getElementById("markers");
+const ordered = document.getElementById("ordered");
+const selected = document.getElementById("selected");
+const scaleBar = document.getElementById("scale");
+const plus = document.getElementById("plus");
+const minus = document.getElementById("minus");
+const SVG_NS = "http://www.w3.org/2000/svg";
+const maxZoom = 6.5;
+const bounds = {x:0,y:0,w:width,h:height};
+let view = {...bounds};
+
+function svg(tag,attrs,parent) {
+ const element = document.createElementNS(SVG_NS,tag);
+ for (const [name,value] of Object.entries(attrs)) element.setAttribute(name,value);
+ parent.append(element);
+ return element;
+}
+function html(tag,value,parent,className) {
+ const element=document.createElement(tag);
+ if (value) element.textContent=value;
+ if (className) element.className=className;
+ parent.append(element);
+ return element;
+}
+const notes = {4:"Два корпуса · уточнить",6:"3–4-й подъезды",7:"3–4-й подъезды",8:"3–4-й подъезды · рынок «Спутник»",14:"У стадиона «Металлург»"};
+for (const e of entries) {
+ const [x,y] = e.badge;
+ const marker = svg("g",{"class":"marker"+(e.id===4?" uncertain":""),"aria-label":e.id+". "+e.address,
+   "aria-pressed":"false","tabindex":0,"role":"button"},markers);
+ svg("title",{},marker).textContent=e.id+". "+e.address;
+ for (const [a,b] of e.targets) {
+  if (Math.hypot(x-a,y-b)>3) {
+   svg("line",{x1:a,y1:b,x2:x,y2:y},marker);
+   svg("circle",{"cx":a,"cy":b,"r":4,"class":"anchor"},marker);
+  }
+ }
+ const badge = svg("g",{transform:"translate("+x+" "+y+")"},marker);
+ svg("circle",{cx:0,cy:0,r:14,"class":"badge"},badge);
+ svg("text",{x:0,y:0,"aria-hidden":"true"},badge).textContent=e.id;
+ e.badgeElement=badge;
+ marker.addEventListener("click", () => choose(e));
+ marker.addEventListener("keydown", event => {
+  if (!["Enter"," "].includes(event.key)) return;
+  event.preventDefault();
+  choose(e);
+ });
+ const li=html("li","",ordered);
+ const button=html("button","",li,"addr");
+ button.type="button";
+ button.setAttribute("aria-pressed","false");
+ html("span",e.id,button,"number"+(e.id===4?" alt":""));
+ const title=html("span","",button);
+ html("strong",e.address,title);
+ if (notes[e.id]) html("small",notes[e.id],title);
+ button.addEventListener("click",()=>{
+  choose(e);
+  if(matchMedia("(max-width:820px)").matches) map.parentElement.scrollIntoView({block:"start"});
+ });
+ e.marker=marker;
+ e.button=button;
+}
+function choose(entry) {
+ for (const e of entries) {
+  e.marker.classList.toggle("selected",e===entry);
+  e.marker.setAttribute("aria-pressed",String(e===entry));
+  e.button.setAttribute("aria-pressed",String(e===entry));
+ }
+ selected.replaceChildren();
+ html("h3",entry.id+". "+entry.address,selected);
+ if(entry.note) html("p",entry.note,selected);
+ const links=html("ul","",selected,"sources");
+ for (const [label,url] of entry.links) {
+  const a=html("a",label,html("li","",links));
+  a.href=url;
+  a.target="_blank";
+  a.rel="noopener noreferrer";
+ }
+ const [x,y]=entry.targets.reduce(([x,y],[a,b])=>[x+a/entry.targets.length,y+b/entry.targets.length],[0,0]);
+ zoomTo(Math.max(3.5,width/view.w), x,y);
+}
+function limit(value,min,max) {return Math.min(Math.max(value,min),max)}
+function render(next) {
+ view={...next,x:limit(next.x,0,width-next.w),y:limit(next.y,0,height-next.h)};
+ map.setAttribute("viewBox",[view.x,view.y,view.w,view.h].join(" "));
+ plus.disabled=width/view.w>=maxZoom-0.01;
+ minus.disabled=width/view.w<=1.01;
+ const realScale=Math.min(map.clientWidth/view.w,map.clientHeight/view.h);
+ const targetSize=matchMedia("(max-width:490px)").matches?20:27;
+ const factor=limit(targetSize/(28*realScale),0.11,1.85);
+ for (const e of entries) e.badgeElement.setAttribute("transform",
+     "translate("+e.badge.join(" ")+") scale("+factor+")");
+ const bar=scale*realScale;
+ const km=[2,1,0.5,0.25,0.1,0.05].find(value=>value*bar<=108)??0.05;
+ scaleBar.firstElementChild.textContent=km<1?Math.round(km*1000)+" м":km+" км";
+ scaleBar.lastElementChild.style.width=Math.max(12,bar*km)+"px";
+}
+function zoomTo(z,x,y,fx=0.5,fy=0.5) {
+ const zoom=limit(z,1,maxZoom);
+ const w=width/zoom;
+ const h=height/zoom;
+ render({x:x-fx*w,y:y-fy*h,w,h});
+}
+function zoomRelative(mult) {zoomTo(width/view.w*mult,view.x+view.w/2,view.y+view.h/2)}
+function point(clientX,clientY) {
+ const pos=map.createSVGPoint();
+ pos.x=clientX;
+ pos.y=clientY;
+ return pos.matrixTransform(map.getScreenCTM().inverse());
+}
+plus.addEventListener("click",()=>zoomRelative(1.55));
+minus.addEventListener("click",()=>zoomRelative(1/1.55));
+document.getElementById("reset").addEventListener("click",()=>render(bounds));
+map.addEventListener("wheel",event=>{
+ if(!event.ctrlKey&&!event.metaKey) return;
+ event.preventDefault();
+ const {x,y}=point(event.clientX,event.clientY);
+ zoomTo(width/view.w*(event.deltaY<0?1.18:1/1.18),x,y,(x-view.x)/view.w,(y-view.y)/view.h);
+},{passive:false});
+let fingers=new Map();
+let start=null;
+let moved=false;
+function restart() {
+ const contacts=[...fingers.values()];
+ if (!contacts.length) return;
+ const [a,b]=contacts;
+ const mid=b?[(a.x+b.x)/2,(a.y+b.y)/2]:[a.x,a.y];
+ const anchor=point(...mid);
+ start={mid,anchor,view:{...view},distance:b?Math.hypot(a.x-b.x,a.y-b.y):null};
+}
+map.addEventListener("pointerdown",event=>{
+ if (event.button!==0) return;
+ if (!fingers.size) moved=false;
+ if (fingers.size>=2) return;
+ fingers.set(event.pointerId,{x:event.clientX,y:event.clientY});
+ restart();
+});
+map.addEventListener("pointermove",event=>{
+ if(!fingers.has(event.pointerId)||!start) return;
+ fingers.set(event.pointerId,{x:event.clientX,y:event.clientY});
+ const [a,b]=[...fingers.values()];
+ const mid=b?[(a.x+b.x)/2,(a.y+b.y)/2]:[a.x,a.y];
+ const dx=mid[0]-start.mid[0];
+ const dy=mid[1]-start.mid[1];
+ if (!b&&!moved&&Math.hypot(dx,dy)<5) return;
+ moved=true;
+ if(!map.hasPointerCapture(event.pointerId)) map.setPointerCapture(event.pointerId);
+ map.classList.add("dragging");
+ const zoom=width/start.view.w;
+ const z=limit(b&&start.distance?zoom*Math.hypot(a.x-b.x,a.y-b.y)/start.distance:zoom,1,maxZoom);
+ const w=width/z;
+ const h=height/z;
+ const nextScale=Math.min(map.clientWidth/w,map.clientHeight/h);
+ render({x:start.anchor.x-(start.anchor.x-start.view.x)*w/start.view.w-dx/nextScale,
+         y:start.anchor.y-(start.anchor.y-start.view.y)*h/start.view.h-dy/nextScale,w,h});
+});
+function release(event) {
+ if(!fingers.delete(event.pointerId)) return;
+ if(fingers.size) restart();
+ else {
+  start=null;
+  map.classList.remove("dragging");
+ }
+}
+window.addEventListener("pointerup",release);
+window.addEventListener("pointercancel",release);
+map.addEventListener("click",event=>{if(moved){event.stopPropagation();moved=false;}},true);
+new ResizeObserver(()=>render(view)).observe(map);
+render(view);
+</script>
+</body>
+</html>

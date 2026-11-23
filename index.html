@@ -57,7 +57,7 @@
         <span class="keep"><a href="tel:+74742261561">+7 (4742) 261-561</a></span>
         <span>Завод — ежедневно 8:00–20:00</span>
       </div>
-      <div class="social" aria-label="Соцсети"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+      <div class="social" aria-label="Соцсети"><a href="https://vk.ru/ssg.ecotech" target="_blank" rel="noopener">VK</a></div>
     </div>
   </div>
 
@@ -91,7 +91,7 @@
       <a href="tel:+74742261561">+7 (4742) 261-561</a>
       <a href="mailto:info@ccg48.ru">info@ccg48.ru</a>
       <span>Завод — ежедневно 8:00–20:00</span>
-      <div class="social" style="margin-top:8px"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+      <div class="social" style="margin-top:8px"><a href="https://vk.ru/ssg.ecotech" target="_blank" rel="noopener">VK</a></div>
     </div>
   </div>
 
@@ -205,7 +205,7 @@
             <button class="chip" data-cat="tech" type="button"><svg class="icon"><use href="#i-cpu"/></svg>Бытовая техника</button>
             <button class="chip" data-cat="constr" type="button"><svg class="icon"><use href="#i-brick"/></svg>Строительные отходы</button>
             <button class="chip" data-cat="branches" type="button"><svg class="icon"><use href="#i-branch"/></svg>Ветки</button>
-            <button class="chip" data-cat="glass" type="button"><svg class="icon"><use href="#i-glass"/></svg>Стеклянные бутылки</button>
+            <button class="chip" data-cat="glass" id="glass" type="button"><svg class="icon"><use href="#i-glass"/></svg>Стеклянные бутылки</button>
             <button class="chip" data-cat="bulky" type="button"><svg class="icon"><use href="#i-box"/></svg>Крупногабаритные отходы</button>
           </div>
           <div class="chip-answer" id="chipAnswer" aria-live="polite">
@@ -214,6 +214,10 @@
               <span class="status-tag" id="chipStatus"></span>
               <h3 id="chipTitle"></h3>
               <dl class="chip-facts" id="chipFacts"></dl>
+              <div class="glass-links" id="glassLinks" hidden>
+                <a href="glass-map.html">Открыть карту «Колокольчиков»</a>
+                <a href="assets/maps/glass-addresses.jpg" download>Скачать памятку с адресами (JPG)</a>
+              </div>
             </div>
           </div>
         </div>
@@ -380,7 +384,7 @@
         <div class="seg-rule" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
       <div class="faq reveal-group">
-        <details><summary>Если отходы едут в одной машине, зачем что-то делать дома?</summary><p>В нашей зоне обслуживания весь поток поступает на территорию Экотехнопарка вместе и разделяется уже на сортировочной линии. Но то, в каком состоянии упаковка попадает в контейнер, тоже имеет значение. Пустую и подготовленную упаковку проще отделить от общего потока и направить на дальнейшую переработку. Поэтому дома не нужно сортировать всё на десятки категорий, достаточно следовать нескольким простым правилам.</p></details>
+        <details><summary>Если отходы едут в одной машине, зачем что-то делать дома?</summary><p>Содержимое общих баков ТКО поступает на территорию Экотехнопарка вместе и разделяется уже на сортировочной линии. Но то, в каком состоянии упаковка попадает в контейнер, тоже имеет значение. Пустую и подготовленную упаковку проще отделить от общего потока и направить на дальнейшую переработку. Поэтому дома не нужно сортировать всё на десятки категорий, достаточно следовать нескольким простым правилам.</p></details>
         <details><summary>На заводе бывает запах? Это безопасно для соседних населённых пунктов?</summary><p>На предприятии такого типа запах может возникать. При этом состояние окружающей среды контролируется постоянно. Экологический мониторинг проводится ежемесячно.</p></details>
         <details><summary>Какие материалы завод отбирает для переработки?</summary><p>На линии отбираем ПЭТ, ПВД, ПНД, плёнку, стекло, алюминиевую банку, картон и макулатуру.</p></details>
         <details><summary>Что делать с бумагой и картоном?</summary><p>Картон и бумага могут быть отобраны на сортировочной линии и направлены переработчикам. Лучше, если бумага остаётся сухой и не загрязнена пищевыми отходами. Отдельно привозить её на завод не нужно.</p></details>
@@ -432,13 +436,13 @@
           <h4>Контакты</h4>
           <a href="tel:+74742261561">+7 (4742) 261-561</a>
           <a href="mailto:info@ccg48.ru">info@ccg48.ru</a>
-          <a href="https://vk.com/ccg48" target="_blank" rel="noopener">Мы во ВКонтакте</a>
-          <a href="https://t.me/ccg48" target="_blank" rel="noopener">Мы в Telegram</a>
+          <a href="https://vk.ru/ssg.ecotech" target="_blank" rel="noopener">Мы во ВКонтакте</a>
+
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 ООО «СтройСельхозГарант»</span>
-        <div class="social"><a href="https://vk.com/ccg48" target="_blank" rel="noopener">VK</a><a href="https://t.me/ccg48" target="_blank" rel="noopener">TG</a></div>
+        <div class="social"><a href="https://vk.ru/ssg.ecotech" target="_blank" rel="noopener">VK</a></div>
       </div>
     </div>
   </footer>
@@ -473,7 +477,7 @@
       tech: { title: 'Бытовая техника', ok: true, where: 'в общий бак ТКО.', prep: 'вынуть батарейки и аккумуляторы, если они есть, и сдать их отдельно.' },
       constr: { title: 'Строительные отходы', ok: false, where: 'крупногабаритные строительные отходы складывают в специальный отсек на контейнерной площадке.' },
       branches: { title: 'Ветки', ok: false, where: 'порядок вывоза растительных отходов уточняем, инструкция появится здесь.', note: 'ветки нельзя выбрасывать в бак ТКО.' },
-      glass: { title: 'Стеклянные бутылки', ok: true, where: 'в общий бак ТКО.', prep: 'не разбивать специально.', note: 'целое стекло безопаснее для сотрудников сортировочной линии и удобнее в сортировке.' },
+      glass: { title: 'Стеклянные бутылки', ok: true, status: 'Контейнер для стекла', where: 'в «Колокольчик» для стекла. На карте — 20 адресов в Липецке. Если рядом нет такого контейнера, бутылку можно положить в общий бак ТКО.', prep: 'не разбивать специально.', note: 'целое стекло безопаснее для сотрудников сортировочной линии и удобнее в сортировке.' },
       bulky: { title: 'Крупногабаритные отходы', ok: false, where: 'старая мебель и другие крупные предметы — в отдельные отсеки на контейнерной площадке.', note: 'мелкий мусор в такой отсек бросать не нужно, для него есть обычный бак.' }
     };
     var chipRow = document.getElementById('chipRow'), panel = document.getElementById('chipAnswer');
@@ -491,10 +495,13 @@
       var img = document.getElementById('chipImg'), src = 'assets/cutouts/cat-' + btn.dataset.cat + '.webp';
       if (window.ssgMotion) ssgMotion.swapImage(img, src); else img.src = src;
       var st = document.getElementById('chipStatus');
-      st.textContent = cat.ok ? 'В общий бак ТКО' : 'Нужно отдельное обращение';
+      st.textContent = cat.status || (cat.ok ? 'В общий бак ТКО' : 'Нужно отдельное обращение');
+      document.getElementById('glassLinks').hidden = btn.dataset.cat !== 'glass';
       st.className = 'status-tag ' + (cat.ok ? 'status-ok' : 'status-tbd');
       panel.classList.remove('show'); void panel.offsetWidth; panel.classList.add('show');
     });
+
+    if (location.hash === '#glass') document.getElementById('glass').click();
 
     // Картинки ответов подгружаем заранее: по клику круг не пустеет даже на медленной сети
     window.addEventListener('load', function () {
