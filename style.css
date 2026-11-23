@@ -93,11 +93,13 @@ svg.icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-w
 
 /* ---------- Шапка ---------- */
 .header { background: var(--white); border-bottom: 1px solid var(--grey-200); position: sticky; top: 0; z-index: 50; }
-.header .container { display: flex; align-items: center; gap: 28px; height: 68px; }
+.header .container { display: flex; align-items: center; gap: 20px; height: 68px; max-width: 1380px; }
 .logo { display: flex; align-items: center; flex: none; }
 .logo img { height: 36px; }
-.nav { display: flex; gap: 24px; margin-left: auto; }
-.nav a { color: var(--ink-600); font-size: 15px; font-weight: 500; padding: 22px 0; border-bottom: 2px solid transparent; }
+.nav { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+.nav a { color: var(--ink-600); font-size: 14px; font-weight: 500; padding: 12px 0; white-space: nowrap; border-bottom: 2px solid transparent; }
+.nav a.map-nav { color: var(--green-900); background: var(--teal-100); border-radius: var(--radius-ctl); border: 0; padding: 8px 12px; font-size: 14px; line-height: 1.25; text-align: center; }
+.nav a.map-nav:hover { background: var(--green-100); }
 .nav a:hover { color: var(--green-700); }
 .nav a.active { color: var(--green-700); border-bottom-color: var(--teal-500); }
 .header .btn { flex: none; }
@@ -239,6 +241,7 @@ a.card.card-green:hover { background: var(--green-900); }
 .chip:hover { border-color: var(--green-700); color: var(--green-700); }
 .chip.active { background: var(--green-700); border-color: var(--green-700); color: var(--white); }
 .chip-answer { margin-top: 24px; display: grid; grid-template-columns: 4px 1fr; gap: 24px; padding: 4px 0; opacity: 0; transform: translateY(6px); transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+.chip-answer:not(.show) { display: none; }
 .chip-answer.show { opacity: 1; transform: none; }
 .chip-answer::before { content: ""; background: linear-gradient(to bottom, var(--teal-500) 0 72%, var(--orange-500) 72% 100%); }
 .chip-answer h3 { font-size: 24px; margin-bottom: 10px; }
@@ -436,6 +439,17 @@ a.card.card-green:hover { background: var(--green-900); }
 /* ============================================================
    Адаптив
    ============================================================ */
+@media (max-width: 1279px) {
+  .nav a:not(.map-nav), .nav .nav-ink, .header .btn-nav { display: none; }
+  .burger { display: block; flex: none; margin-left: 0; }
+  .header .container { gap: 12px; }
+  .nav .map-nav { display: grid; align-content: center; min-height: 44px; white-space: normal; }
+}
+
+@media (max-width: 360px) {
+  .header .container { padding-inline: 8px; gap: 6px; }
+}
+
 @media (max-width: 1080px) {
   .why-grid { grid-template-columns: 320px 1fr; gap: 40px; }
   .quiz-layout { grid-template-columns: 1fr 300px; gap: 32px; }
@@ -444,8 +458,6 @@ a.card.card-green:hover { background: var(--green-900); }
 
 @media (max-width: 900px) {
   :root { --section: 72px; }
-  .nav, .header .btn-nav { display: none; }
-  .burger { display: block; }
   .topbar .topbar-left span:not(.keep) { display: none; }
   .stats { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
   .grid-2, .grid-3, .rules, .fractions, .figures, .mistakes { grid-template-columns: 1fr; }
@@ -608,7 +620,10 @@ a.card.card-green:hover { background: var(--green-900); }
 /* ---------- Ответ в «Куда это выбросить?»: куда / как подготовить / важно ---------- */
 .chip-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; max-width: 62ch; }
 .glass-links:not([hidden]) { display: grid; justify-items: start; gap: 8px; margin-top: 16px; }
-.glass-links a { color: var(--green-700); text-decoration: underline; text-underline-offset: 3px; }
+.glass-memo { margin: 28px 0 0; }
+.glass-memo img { width: 100%; height: auto; border: 1px solid var(--grey-200); border-radius: var(--radius-card); }
+.glass-memo figcaption { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-size: 15px; }
+.glass-memo a, .glass-links a { color: var(--green-700); text-decoration: underline; text-underline-offset: 3px; }
 .chip-facts dt { font-size: 12px; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--teal-500); padding-top: 3px; white-space: nowrap; }
 .chip-facts dd { margin: 0; color: var(--ink-600); }
 @media (max-width: 600px) {
