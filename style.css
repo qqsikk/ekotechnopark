@@ -619,11 +619,13 @@ a.card.card-green:hover { background: var(--green-900); }
 
 /* ---------- Ответ в «Куда это выбросить?»: куда / как подготовить / важно ---------- */
 .chip-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; max-width: 62ch; }
-.glass-links:not([hidden]) { display: grid; justify-items: start; gap: 8px; margin-top: 16px; }
-.glass-memo { margin: 28px 0 0; }
-.glass-memo img { width: 100%; height: auto; border: 1px solid var(--grey-200); border-radius: var(--radius-card); }
-.glass-memo figcaption { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-size: 15px; }
-.glass-memo a, .glass-links a { color: var(--green-700); text-decoration: underline; text-underline-offset: 3px; }
+.glass-memo { grid-column: 1 / -1; margin: 0; min-width: 0; border: 1px solid var(--green-100); border-radius: var(--radius-card); background: var(--teal-050); }
+.glass-memo img { width: 100%; height: auto; border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.glass-memo figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; padding: 12px 16px; border-top: 1px solid var(--green-100); }
+.glass-memo .memo-download { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 420px) {
+  .glass-memo figcaption { justify-content: center; }
+}
 .chip-facts dt { font-size: 12px; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--teal-500); padding-top: 3px; white-space: nowrap; }
 .chip-facts dd { margin: 0; color: var(--ink-600); }
 @media (max-width: 600px) {

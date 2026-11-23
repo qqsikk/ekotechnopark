@@ -215,18 +215,15 @@
               <span class="status-tag" id="chipStatus"></span>
               <h3 id="chipTitle"></h3>
               <dl class="chip-facts" id="chipFacts"></dl>
-              <div class="glass-links" id="glassLinks" hidden>
-                <a href="glass-map.html">Открыть карту «Колокольчиков»</a>
-              </div>
             </div>
+            <figure class="glass-memo" id="glassMemo" hidden>
+              <img src="assets/maps/glass-addresses.jpg" width="1024" height="1280" loading="lazy" alt="Памятка с картой и адресами 20 контейнеров для стекла в Липецке">
+              <figcaption>
+                <a class="btn btn-primary btn-sm" href="glass-map.html"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Открыть карту</a>
+                <a class="memo-download" href="assets/maps/glass-addresses.jpg" download>Скачать памятку (JPG)</a>
+              </figcaption>
+            </figure>
           </div>
-          <figure class="glass-memo">
-            <img src="assets/maps/glass-addresses.jpg" width="1024" height="1280" loading="lazy" alt="Памятка с картой и адресами 20 контейнеров для стекла в Липецке">
-            <figcaption>
-              <a href="glass-map.html">Посмотреть адреса на карте</a>
-              <a href="assets/maps/glass-addresses.jpg" download>Скачать памятку (JPG)</a>
-            </figcaption>
-          </figure>
         </div>
         <div class="interactive-side">
           <a class="card card-green reveal" href="sorting.html#quiz" style="--i:1">
@@ -503,7 +500,7 @@
       if (window.ssgMotion) ssgMotion.swapImage(img, src); else img.src = src;
       var st = document.getElementById('chipStatus');
       st.textContent = cat.status || (cat.ok ? 'В общий бак ТКО' : 'Нужно отдельное обращение');
-      document.getElementById('glassLinks').hidden = btn.dataset.cat !== 'glass';
+      document.getElementById('glassMemo').hidden = btn.dataset.cat !== 'glass';
       st.className = 'status-tag ' + (cat.ok ? 'status-ok' : 'status-tbd');
       panel.classList.remove('show'); void panel.offsetWidth; panel.classList.add('show');
     });
