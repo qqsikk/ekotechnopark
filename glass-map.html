@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Карта «Колокольчиков» · Липецк</title>
 <style>
-:root{color-scheme:light;--bg:#f6f5ed;--paper:#fffdf8;--ink:#1d2a26;--muted:#51645b;--green:#155749;--amber:#91541e;--border:#d7ded3;--soft:#eaf2ec}
+:root{color-scheme:light;--bg:#f6f5ed;--paper:#fffdf8;--ink:#1d2a26;--muted:#51645b;--green:#155749;--border:#d7ded3;--soft:#eaf2ec}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Inter","Segoe UI",Arial,sans-serif}
 button,a{touch-action:manipulation}
@@ -37,7 +37,6 @@ main{display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,360px);gap:16
 .scale span{display:block;height:6px;border:solid var(--green);border-width:0 2px 2px}
 .basemap-credit{position:absolute;right:9px;bottom:8px;background:#fffdf5e8;padding:1px 5px;border-radius:4px;font-size:10px}
 .marker{cursor:pointer;color:var(--green)}
-.marker.uncertain{color:var(--amber)}
 .marker .badge{fill:currentColor;stroke:var(--paper);stroke-width:2.5}
 .marker text{fill:white;pointer-events:none;font-weight:750;font-size:13px;text-anchor:middle;dominant-baseline:central}
 .marker line{stroke:currentColor;stroke-width:2.2}
@@ -55,7 +54,6 @@ h2{font-size:18px;line-height:1.2;margin:0 0 10px;letter-spacing:-.02em}
 .addr:hover,.addr[aria-pressed=true]{background:var(--soft)}
 .addr:focus-visible{outline-offset:-2px}
 .number{border-radius:100%;width:25px;height:25px;flex:none;display:grid;place-items:center;background:var(--green);color:white;font-size:12px;font-weight:800}
-.number.alt{background:var(--amber)}
 .addr strong{display:block;font-weight:620;font-size:14px}
 .addr small{display:block;font-size:11px;color:var(--muted)}
 footer{padding-top:12px;padding-bottom:22px;font-size:12px}
@@ -84,7 +82,7 @@ footer{padding-top:12px;padding-bottom:22px;font-size:12px}
   <h1>Карта «Колокольчиков»</h1>
   <p>Адреса установки контейнеров для стекла</p>
  </div>
- <a class="download" href="assets/maps/glass-map-print.png" download="Lipetsk_Glass_Map.png">Скачать PNG</a>
+ <a class="download" href="assets/maps/glass-map-print.png?v=2" download="Lipetsk_Glass_Map.png">Скачать PNG</a>
 </header>
 <main>
  <section class="map" aria-label="Интерактивная карта">
@@ -110,12 +108,12 @@ footer{padding-top:12px;padding-bottom:22px;font-size:12px}
  </section>
 </main>
 <footer>
- <p>Метки показывают здания и ориентир в сквере. Место контейнера во дворе может отличаться. Для № 4 показаны оба корпуса.</p>
+ <p>Метки показывают адреса и ориентиры. Место контейнера во дворе может отличаться.</p>
 </footer>
 <noscript><p>Для интерактивной карты включите JavaScript. Изображение доступно по кнопке «Скачать PNG».</p></noscript>
 <script>
 "use strict";
-const {entries,width,height,scale} = {"entries": [{"id": 1, "address": "ул. И. В. Свиридова, 22, корп. 1", "note": "", "coords": [[39.5184383, 52.575854500000005]], "targets": [[254.04, 700.13]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834590747"]], "badge": [254.04, 700.13]}, {"id": 2, "address": "ул. А. Г. Стаханова, 73", "note": "", "coords": [[39.51378645, 52.573210700000004]], "targets": [[221.7, 730.38]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1218992581"]], "badge": [221.7, 730.38]}, {"id": 3, "address": "ул. Леонтия Кривенкова, 33", "note": "", "coords": [[39.50083015, 52.5809736]], "targets": [[131.6, 641.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1369915680"]], "badge": [131.6, 641.56]}, {"id": 4, "address": "Минская ул., 6А", "note": "В таблице корпус не указан. У адреса два корпуса ЖК «Геометрия». Оба показаны на карте.", "coords": [[39.50410935, 52.57545184999999], [39.5031995, 52.575889849999996]], "targets": [[154.4, 704.74], [148.08, 699.73]], "links": [["Корпус 1 на OpenStreetMap", "https://www.openstreetmap.org/way/367088359"], ["Корпус 2 на OpenStreetMap", "https://www.openstreetmap.org/way/1154915536"], ["Адреса от застройщика", "https://odsk-group.ru/projects-finished?city=43"]], "badge": [151.24, 735.24]}, {"id": 5, "address": "ул. А. Г. Стаханова, 2", "note": "", "coords": [[39.53509569605636, 52.596174]], "targets": [[369.87, 467.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17671521"]], "badge": [369.87, 467.58]}, {"id": 6, "address": "ул. А. Г. Стаханова, 59", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.51311669954184, 52.5800336]], "targets": [[217.04, 652.31]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17716748"]], "badge": [217.04, 652.31]}, {"id": 7, "address": "ул. С. С. Бехтеева, 9", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.5109229, 52.6021128]], "targets": [[201.78, 399.59]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17717199"]], "badge": [201.78, 399.59]}, {"id": 8, "address": "просп. 60 лет СССР, 41", "note": "В таблице указаны 3–4-й подъезды, ориентир — рынок «Спутник». Метка показывает здание.", "coords": [[39.5241638, 52.591031349999994]], "targets": [[293.86, 526.45]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93225649"]], "badge": [293.86, 526.45]}, {"id": 9, "address": "ул. С. Л. Шуминского, 6", "note": "", "coords": [[39.51840445, 52.58604135]], "targets": [[253.81, 583.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/180227662"]], "badge": [253.81, 583.56]}, {"id": 10, "address": "Учебный пер., 2", "note": "", "coords": [[39.520311500000005, 52.580544200000006]], "targets": [[267.07, 646.47]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/370488552"]], "badge": [267.07, 646.47]}, {"id": 11, "address": "Московская ул., 111", "note": "", "coords": [[39.51547975, 52.60059765]], "targets": [[233.47, 416.94]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93217052"]], "badge": [233.47, 416.94]}, {"id": 12, "address": "Московская ул., 61Г", "note": "", "coords": [[39.53280515, 52.61010675]], "targets": [[353.94, 308.06]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/86952848"]], "badge": [353.94, 308.06]}, {"id": 13, "address": "ул. Зои Космодемьянской, 2/1", "note": "", "coords": [[39.620914, 52.588061]], "targets": [[966.62, 560.44]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/6604559"], ["Адрес и метка на карте", "https://www.mirkvartir.ru/373478807/"]], "badge": [966.62, 560.44]}, {"id": 14, "address": "Ворошиловский сквер", "note": "Сквер у стадиона «Металлург». Ориентир в сквере — памятник Алексею Хренникову.", "coords": [[39.5896543, 52.6032955]], "targets": [[749.25, 386.05]], "links": [["Памятник в сквере на OpenStreetMap", "https://www.openstreetmap.org/node/13012010168"], ["Расположение сквера в постановлении администрации", "https://base.garant.ru/73226885/"]], "badge": [749.25, 386.05]}, {"id": 15, "address": "просп. 60 лет СССР, 16", "note": "", "coords": [[39.538114050000004, 52.586235450000004]], "targets": [[390.86, 581.34]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93182630"]], "badge": [390.86, 581.34]}, {"id": 16, "address": "Опытная ул., 17Б", "note": "", "coords": [[39.541049, 52.63179345]], "targets": [[411.27, 59.65]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834559682"]], "badge": [411.27, 59.65]}, {"id": 17, "address": "ул. Эдуарда Белана, 10", "note": "", "coords": [[39.51052755, 52.58278235]], "targets": [[199.03, 620.86]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/201095770"]], "badge": [199.03, 620.86]}, {"id": 18, "address": "ул. Водопьянова, 25", "note": "", "coords": [[39.53830445, 52.594164750000004]], "targets": [[392.18, 490.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93185145"]], "badge": [420.18, 490.58]}, {"id": 19, "address": "ул. Гагарина, 35", "note": "Ориентир из таблицы — магазин «Кристалл».", "coords": [[39.596004, 52.616996]], "targets": [[793.4, 229.16]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/147637522"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/Z0AYcw5mSUUDQFtofXpwd3VqYQ%3D%3D/"]], "badge": [793.4, 229.16]}, {"id": 20, "address": "пл. Победы, 3А", "note": "Ориентир из таблицы — Центральный рынок.", "coords": [[39.572612, 52.602609]], "targets": [[630.75, 393.91]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/13601965"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/ploshchad_pobedy_3a/Z0AYcwBiT0QFQFtofXpxc3pjbA%3D%3D/"]], "badge": [630.75, 393.91]}], "width": 1100, "height": 790, "scale": 102.85056374997312};
+const {entries,width,height,scale} = {"entries": [{"id": 1, "address": "ул. И. В. Свиридова, 22, корп. 1", "note": "", "coords": [[39.5184383, 52.575854500000005]], "targets": [[254.04, 700.13]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834590747"]], "badge": [254.04, 700.13]}, {"id": 2, "address": "ул. А. Г. Стаханова, 73", "note": "", "coords": [[39.51378645, 52.573210700000004]], "targets": [[221.7, 730.38]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1218992581"]], "badge": [221.7, 730.38]}, {"id": 3, "address": "ул. Леонтия Кривенкова, 33", "note": "", "coords": [[39.50083015, 52.5809736]], "targets": [[131.6, 641.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/1369915680"]], "badge": [131.6, 641.56]}, {"id": 4, "address": "Минская ул., 6А", "note": "", "coords": [[39.5036544, 52.5756708]], "targets": [[151.24, 702.24]], "links": [], "badge": [151.24, 702.24]}, {"id": 5, "address": "ул. А. Г. Стаханова, 2", "note": "", "coords": [[39.53509569605636, 52.596174]], "targets": [[369.87, 467.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17671521"]], "badge": [369.87, 467.58]}, {"id": 6, "address": "ул. А. Г. Стаханова, 59", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.51311669954184, 52.5800336]], "targets": [[217.04, 652.31]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17716748"]], "badge": [217.04, 652.31]}, {"id": 7, "address": "ул. С. С. Бехтеева, 9", "note": "В таблице указаны 3–4-й подъезды. Метка показывает здание.", "coords": [[39.5109229, 52.6021128]], "targets": [[201.78, 399.59]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/17717199"]], "badge": [201.78, 399.59]}, {"id": 8, "address": "просп. 60 лет СССР, 41", "note": "В таблице указаны 3–4-й подъезды, ориентир — рынок «Спутник». Метка показывает здание.", "coords": [[39.5241638, 52.591031349999994]], "targets": [[293.86, 526.45]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93225649"]], "badge": [293.86, 526.45]}, {"id": 9, "address": "ул. С. Л. Шуминского, 6", "note": "", "coords": [[39.51840445, 52.58604135]], "targets": [[253.81, 583.56]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/180227662"]], "badge": [253.81, 583.56]}, {"id": 10, "address": "Учебный пер., 2", "note": "", "coords": [[39.520311500000005, 52.580544200000006]], "targets": [[267.07, 646.47]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/370488552"]], "badge": [267.07, 646.47]}, {"id": 11, "address": "Московская ул., 111", "note": "", "coords": [[39.51547975, 52.60059765]], "targets": [[233.47, 416.94]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93217052"]], "badge": [233.47, 416.94]}, {"id": 12, "address": "Московская ул., 61Г", "note": "", "coords": [[39.53280515, 52.61010675]], "targets": [[353.94, 308.06]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/86952848"]], "badge": [353.94, 308.06]}, {"id": 13, "address": "ул. Зои Космодемьянской, 2/1", "note": "", "coords": [[39.620914, 52.588061]], "targets": [[966.62, 560.44]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/6604559"], ["Адрес и метка на карте", "https://www.mirkvartir.ru/373478807/"]], "badge": [966.62, 560.44]}, {"id": 14, "address": "Ворошиловский сквер", "note": "Сквер у стадиона «Металлург». Ориентир в сквере — памятник Алексею Хренникову.", "coords": [[39.5896543, 52.6032955]], "targets": [[749.25, 386.05]], "links": [["Памятник в сквере на OpenStreetMap", "https://www.openstreetmap.org/node/13012010168"], ["Расположение сквера в постановлении администрации", "https://base.garant.ru/73226885/"]], "badge": [749.25, 386.05]}, {"id": 15, "address": "просп. 60 лет СССР, 16", "note": "", "coords": [[39.538114050000004, 52.586235450000004]], "targets": [[390.86, 581.34]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93182630"]], "badge": [390.86, 581.34]}, {"id": 16, "address": "Опытная ул., 17Б", "note": "", "coords": [[39.541049, 52.63179345]], "targets": [[411.27, 59.65]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/834559682"]], "badge": [411.27, 59.65]}, {"id": 17, "address": "ул. Эдуарда Белана, 10", "note": "", "coords": [[39.51052755, 52.58278235]], "targets": [[199.03, 620.86]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/201095770"]], "badge": [199.03, 620.86]}, {"id": 18, "address": "ул. Водопьянова, 25", "note": "", "coords": [[39.53830445, 52.594164750000004]], "targets": [[392.18, 490.58]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/93185145"]], "badge": [420.18, 490.58]}, {"id": 19, "address": "ул. Гагарина, 35", "note": "Ориентир из таблицы — магазин «Кристалл».", "coords": [[39.596004, 52.616996]], "targets": [[793.4, 229.16]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/way/147637522"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/Z0AYcw5mSUUDQFtofXpwd3VqYQ%3D%3D/"]], "badge": [793.4, 229.16]}, {"id": 20, "address": "пл. Победы, 3А", "note": "Ориентир из таблицы — Центральный рынок.", "coords": [[39.572612, 52.602609]], "targets": [[630.75, 393.91]], "links": [["Объект на OpenStreetMap", "https://www.openstreetmap.org/relation/13601965"], ["Здание в Яндекс Картах", "https://yandex.com/maps/9/lipetsk/house/ploshchad_pobedy_3a/Z0AYcwBiT0QFQFtofXpxc3pjbA%3D%3D/"]], "badge": [630.75, 393.91]}], "width": 1100, "height": 790, "scale": 102.85056374997312};
 const map = document.getElementById("map");
 const markers = document.getElementById("markers");
 const ordered = document.getElementById("ordered");
@@ -141,10 +139,10 @@ function html(tag,value,parent,className) {
  parent.append(element);
  return element;
 }
-const notes = {4:"Два корпуса · уточнить",6:"3–4-й подъезды",7:"3–4-й подъезды",8:"3–4-й подъезды · рынок «Спутник»",14:"У стадиона «Металлург»"};
+const notes = {6:"3–4-й подъезды",7:"3–4-й подъезды",8:"3–4-й подъезды · рынок «Спутник»",14:"У стадиона «Металлург»"};
 for (const e of entries) {
  const [x,y] = e.badge;
- const marker = svg("g",{"class":"marker"+(e.id===4?" uncertain":""),"aria-label":e.id+". "+e.address,
+ const marker = svg("g",{"class":"marker","aria-label":e.id+". "+e.address,
    "aria-pressed":"false","tabindex":0,"role":"button"},markers);
  svg("title",{},marker).textContent=e.id+". "+e.address;
  for (const [a,b] of e.targets) {
@@ -167,7 +165,7 @@ for (const e of entries) {
  const button=html("button","",li,"addr");
  button.type="button";
  button.setAttribute("aria-pressed","false");
- html("span",e.id,button,"number"+(e.id===4?" alt":""));
+ html("span",e.id,button,"number");
  const title=html("span","",button);
  html("strong",e.address,title);
  if (notes[e.id]) html("small",notes[e.id],title);
@@ -187,12 +185,14 @@ function choose(entry) {
  selected.replaceChildren();
  html("h3",entry.id+". "+entry.address,selected);
  if(entry.note) html("p",entry.note,selected);
- const links=html("ul","",selected,"sources");
- for (const [label,url] of entry.links) {
-  const a=html("a",label,html("li","",links));
-  a.href=url;
-  a.target="_blank";
-  a.rel="noopener noreferrer";
+ if (entry.links.length) {
+  const links=html("ul","",selected,"sources");
+  for (const [label,url] of entry.links) {
+   const a=html("a",label,html("li","",links));
+   a.href=url;
+   a.target="_blank";
+   a.rel="noopener noreferrer";
+  }
  }
  const [x,y]=entry.targets.reduce(([x,y],[a,b])=>[x+a/entry.targets.length,y+b/entry.targets.length],[0,0]);
  zoomTo(Math.max(3.5,width/view.w), x,y);
